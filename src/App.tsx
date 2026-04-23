@@ -79,6 +79,10 @@ function Modal({ onUnlock }: { onUnlock: () => void }) {
         return;
       }
 
+      if (typeof window !== 'undefined' && (window as any).fbq) {
+        (window as any).fbq('track', 'Lead');
+      }
+
       onUnlock();
     } catch (err) {
       console.error("Unexpected error:", err);
@@ -260,7 +264,7 @@ function HeroVSL({ unlocked }: { unlocked: boolean }) {
 
 function EbookSection() {
   return (
-    <section className="px-5 py-16 sm:py-24 border-t border-[rgba(226,232,240,0.1)] relative">
+    <section id="lead-magnet" className="px-5 py-16 sm:py-24 border-t border-[rgba(226,232,240,0.1)] relative">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 sm:gap-16 items-center">
         <div className="flex justify-center md:justify-end">
           <div className="book">
@@ -546,6 +550,41 @@ function ValueSection() {
   );
 }
 
+function FloatingEbookCTA() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setShow(true);
+      } else {
+        setShow(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  if (!show) return null;
+
+  return (
+    <a
+      href="#lead-magnet"
+      onClick={(e) => {
+        e.preventDefault();
+        document.getElementById('lead-magnet')?.scrollIntoView({ behavior: 'smooth' });
+      }}
+      className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-[99] flex items-center justify-center gap-2 sm:gap-3 px-5 py-3 sm:px-6 sm:py-4 rounded-full bg-[rgba(3,16,19,0.85)] backdrop-blur-md border border-[#48cae4]/40 text-white shadow-[0_0_20px_rgba(72,202,228,0.3)] hover:shadow-[0_0_30px_rgba(72,202,228,0.6)] hover:bg-[rgba(0,180,216,0.15)] transition-all duration-300 animate-bounce group"
+    >
+      <span className="text-xl sm:text-2xl drop-shadow-md">🎁</span>
+      <span className="font-bold text-xs sm:text-sm tracking-widest uppercase group-hover:text-[#48cae4] transition-colors">
+        E-book de Regalo Abajo
+      </span>
+    </a>
+  );
+}
+
 function MainContent({ unlocked }: { unlocked: boolean }) {
   return (
     <div className="fade-in">
@@ -576,12 +615,15 @@ export default function App() {
   }, [unlocked]);
 
   return (
-    <div className="min-h-screen relative">
-      <div className="parallax-bg" />
-      <div className={unlocked ? "" : "blur-bg select-none"}>
-        <MainContent unlocked={unlocked} />
+    <>
+      <div className="min-h-screen relative">
+        <div className="parallax-bg" />
+        <div className={unlocked ? "" : "blur-bg select-none"}>
+          <MainContent unlocked={unlocked} />
+        </div>
+        {!unlocked && <Modal onUnlock={() => setUnlocked(true)} />}
       </div>
-      {!unlocked && <Modal onUnlock={() => setUnlocked(true)} />}
-    </div>
+      <FloatingEbookCTA />
+    </>
   );
 }
