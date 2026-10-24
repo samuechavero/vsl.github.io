@@ -325,7 +325,7 @@ function ValueSection() {
     },
     {
       title: "Autoridad Instantánea",
-      desc: "E-book estratégico escrito para ti (Ghostwriting) basado en tu historia real para posicionarte como el experto.",
+      desc: "E-book estratégico \"La Anatomía del Vendedor Invisible\" escrito para ti (Ghostwriting) basado en tu historia real para posicionarte como el experto.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
@@ -506,7 +506,7 @@ function EbookSection() {
                 <div className="text-[10px] uppercase tracking-[0.3em] diamond-text mb-3">Manual Estratégico</div>
                 <div className="h-px w-12 bg-[#4A9B9B] mb-5" />
                 <h3 className="font-display text-2xl sm:text-3xl text-white leading-tight">
-                  The Ultimate Growth Partner <span className="diamond-text italic">para Agentes de Seguros</span>
+                  La Anatomía del <span className="diamond-text italic">Vendedor Invisible</span>
                 </h3>
               </div>
               <div>
@@ -522,7 +522,7 @@ function EbookSection() {
         <div className="text-center md:text-left">
           <div className="text-xs uppercase tracking-[0.3em] diamond-text mb-4">E-Book Gratuito</div>
           <h3 className="font-display text-3xl sm:text-5xl leading-tight">
-            The Ultimate Growth Partner <span className="diamond-text italic">para Agentes de Seguros</span>
+            La Anatomía del <span className="diamond-text italic">Vendedor Invisible</span>
           </h3>
           <p className="mt-5 text-base sm:text-lg text-[var(--fg-muted)] leading-relaxed max-w-xl mx-auto md:mx-0">
             Descubre el ecosistema exacto que elimina el trabajo de prospección en frío y convierte desconocidos en citas calificadas directamente en tu calendario.
