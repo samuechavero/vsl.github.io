@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { supabase } from "./lib/supabaseClient";
+import { AscentPresentation } from "./components/ascent/AscentPresentation";
 
 const WHATSAPP_URL = "https://wa.me/18328901102?text=Hola%20Ascent,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20sistema";
 const INSTAGRAM_URL = "https://www.instagram.com/ascentllc.us/";
@@ -669,7 +670,7 @@ function AuthoritySection() {
   );
 }
 
-function FinalCTA() {
+function FinalCTA({ onOpenPresentation }: { onOpenPresentation: () => void }) {
   return (
     <section className="px-5 py-16 sm:py-20 border-t border-[rgba(226,232,240,0.1)] relative">
       <div className="max-w-3xl mx-auto text-center">
@@ -679,32 +680,57 @@ function FinalCTA() {
         <p className="mt-5 text-[var(--fg-muted)] text-base sm:text-lg">
           Conversemos directamente con el equipo de Ascent. Sin intermediarios, sin formularios eternos.
         </p>
-        <div className="mt-8">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
-            className="btn-gem inline-flex items-center gap-3 px-10 py-5 rounded-full text-lg"
+            className="btn-gem inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full text-lg w-full sm:w-auto"
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
             </svg>
             Hablar con Ascent
           </a>
+          <button
+            type="button"
+            onClick={onOpenPresentation}
+            className="inline-flex items-center justify-center gap-3 px-8 py-5 rounded-full text-lg font-medium text-white border border-[#4A9B9B]/60 bg-[rgba(5,19,20,0.8)] hover:bg-[rgba(74,155,155,0.22)] hover:border-[#69bcbc] shadow-[0_0_24px_rgba(74,155,155,0.3)] hover:shadow-[0_0_35px_rgba(74,155,155,0.6)] transition-all duration-300 w-full sm:w-auto cursor-pointer group"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#69bcbc] group-hover:scale-110 transition-transform">
+              <rect width="18" height="14" x="3" y="3" rx="2" />
+              <path d="M7 21h10" />
+              <path d="M12 17v4" />
+              <path d="m10 8 5 3-5 3V8z" fill="currentColor" />
+            </svg>
+            Ver Presentación Comercial
+          </button>
         </div>
       </div>
     </section>
   );
 }
 
-function Footer() {
+function Footer({ onOpenPresentation }: { onOpenPresentation: () => void }) {
   return (
     <footer className="border-t border-[rgba(226,232,240,0.1)] bg-[rgba(5,19,20,0.85)] px-5 py-8">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[var(--fg-muted)]">
         <div className="flex items-center gap-3">
           <img src="./ascent-logo.jpg" alt="Ascent LLC" className="h-8 w-auto object-contain rounded" />
         </div>
-        <div className="flex items-center gap-5">
+        <div className="flex flex-wrap items-center justify-center gap-5">
+          <button
+            type="button"
+            onClick={onOpenPresentation}
+            className="text-[#69bcbc] hover:text-white font-medium transition-colors cursor-pointer flex items-center gap-2"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect width="18" height="14" x="3" y="3" rx="2" />
+              <path d="M7 21h10" />
+              <path d="M12 17v4" />
+            </svg>
+            Ver Presentación
+          </button>
           <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="hover:text-[#4A9B9B] transition-colors">
             Instagram
           </a>
@@ -758,7 +784,7 @@ function FloatingEbookCTA() {
   );
 }
 
-function MainContent({ unlocked }: { unlocked: boolean }) {
+function MainContent({ unlocked, onOpenPresentation }: { unlocked: boolean; onOpenPresentation: () => void }) {
   return (
     <div className="fade-in">
       <Header />
@@ -767,17 +793,30 @@ function MainContent({ unlocked }: { unlocked: boolean }) {
       <ClientsSection />
       <EbookSection />
       <AuthoritySection />
-      <FinalCTA />
-      <Footer />
+      <FinalCTA onOpenPresentation={onOpenPresentation} />
+      <Footer onOpenPresentation={onOpenPresentation} />
     </div>
   );
 }
 
 export default function App() {
   const [unlocked, setUnlocked] = useState(false);
+  const [showPresentation, setShowPresentation] = useState(false);
 
   useEffect(() => {
-    if (unlocked) {
+    const checkHash = () => {
+      const hash = window.location.hash.toLowerCase();
+      if (hash === "#presentacion" || hash === "#presentation") {
+        setShowPresentation(true);
+      }
+    };
+    checkHash();
+    window.addEventListener("hashchange", checkHash);
+    return () => window.removeEventListener("hashchange", checkHash);
+  }, []);
+
+  useEffect(() => {
+    if (unlocked && !showPresentation) {
       document.body.style.overflow = "";
     } else {
       document.body.style.overflow = "hidden";
@@ -785,18 +824,36 @@ export default function App() {
     return () => {
       document.body.style.overflow = "";
     };
-  }, [unlocked]);
+  }, [unlocked, showPresentation]);
+
+  const handleOpenPresentation = () => {
+    setShowPresentation(true);
+    window.location.hash = "presentacion";
+  };
+
+  const handleClosePresentation = () => {
+    setShowPresentation(false);
+    if (window.location.hash === "#presentacion" || window.location.hash === "#presentation") {
+      history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+  };
 
   return (
     <>
       <div className="min-h-screen relative">
         <div className="parallax-bg" />
         <div className={unlocked ? "" : "blur-bg select-none"}>
-          <MainContent unlocked={unlocked} />
+          <MainContent
+            unlocked={unlocked}
+            onOpenPresentation={handleOpenPresentation}
+          />
         </div>
         {!unlocked && <Modal onUnlock={() => setUnlocked(true)} />}
       </div>
       <FloatingEbookCTA />
+      {showPresentation && (
+        <AscentPresentation onClose={handleClosePresentation} />
+      )}
     </>
   );
 }
