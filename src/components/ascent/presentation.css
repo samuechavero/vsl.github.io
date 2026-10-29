@@ -1835,6 +1835,35 @@
   margin-left:9px;
 }
 
+.price-before {
+  color: #a7b8b7;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.price-before del {
+  color: #e5988a;
+  text-decoration: line-through;
+  font-weight: 600;
+}
+
+.price-badge-agents {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  background: rgba(109, 184, 166, 0.16);
+  border: 1px solid rgba(109, 184, 166, 0.35);
+  color: #8fead9;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
 .price-card>p {
   color:#b9c9c6;
   font-size:15px;
