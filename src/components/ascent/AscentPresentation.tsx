@@ -24,8 +24,8 @@ export function HeroSlide() {
       <div className="hero-lockup"><img src="./brand/ascent-wordmark.jpg" alt="Ascent" /></div>
       <Eyebrow>Presentación privada de estrategia comercial</Eyebrow>
       <h1><span>Ecosistema de Adquisición</span><br /><span>Prequalificada para</span><br /><em>Top Producers</em></h1>
-      <p className="hero-lede">Objetivo: construir un sistema que aspire a generar hasta 10 reuniones calificadas por semana. Es una meta de trabajo, no una promesa de volumen ni de resultados.</p>
-      <div className="hero-meta"><span><i /> Objetivo de esta llamada: revisar el plan de punta a punta, sin interrupciones.</span><span>Una conversación. Un plan claro.</span></div>
+      <p className="hero-lede"><strong>Objetivo:</strong> Construir un sistema como meta de trabajo para tener de <strong>10 a 15 citas calificadas por semana</strong>.</p>
+      <div className="hero-meta"><span><i /> Una conversación. Un plan claro.</span></div>
     </div>
     <div className="hero-art">
       <div className="hero-image"><img src="./brand/ascent-meeting-photo.jpg" alt="Una conversación de estrategia entre un asesor y una familia" /></div>
@@ -40,7 +40,7 @@ export function HeroSlide() {
 export function ProblemSlide() {
   const questions = [
     ['01', '¿Con qué compañía o broker operas hoy?'],
-    ['02', '¿Cuentas con equipo de ventas o cierras personalmente?'],
+    ['02', '¿Cuentas con equipo de agendamiento o agendas personalmente?'],
     ['03', '¿Cuál es tu tasa real de conversión en citas agendadas?'],
   ];
   return <SlideFrame>
@@ -58,7 +58,31 @@ export function TransformationSlide() {
     <div className="compare-grid">
       <div className="compare-card traditional"><span className="card-kicker">La conversación tradicional</span><h3>El producto<br />al centro.</h3><div className="term-cloud"><span>IUL</span><span>Ilustraciones</span><span>Tasas</span><span>Jerga técnica</span></div><p>Una explicación compleja antes de entender qué importa.</p></div>
       <div className="compare-arrow"><ArrowRight size={22} /></div>
-      <div className="compare-card ascent"><span className="card-kicker">La conversación Ascent</span><h3>La vida que la familia<br /><em>quiere proteger.</em></h3><div className="outcomes"><div><span>01</span><p>Planificación educativa para los hijos.</p></div><div><span>02</span><p>Explorar beneficios en vida y gastos críticos cubiertos.</p></div><div><span>03</span><p>Planificación de retiro y retiros con enfoque fiscal.</p></div><div><span>04</span><p>Transferencia intergeneracional y legado familiar.</p></div></div><div className="outcome-qualifier">Cada opción depende de los términos de la póliza, underwriting, jurisdicción y circunstancias individuales.</div></div>
+      <div className="compare-card ascent">
+        <span className="card-kicker">La conversación Ascent</span>
+        <h3>La vida que la familia<br /><em>quiere proteger.</em></h3>
+        <div className="outcomes">
+          <div className="outcome-pillar">
+            <span>01</span>
+            <p className="outcome-title">Planificación de la universidad para nuestros hijos</p>
+            <div className="outcome-ebooks">
+              <small>EJEMPLOS DE EBOOK MAGNÉTICO</small>
+              <div className="outcome-book-item">
+                <Sparkles size={13} />
+                <span>“Cómo garanticé la universidad de mis hijos siendo madre soltera”</span>
+              </div>
+              <div className="outcome-book-item">
+                <Sparkles size={13} />
+                <span>“El fondo universitario blindado: La guía para asegurar el futuro académico de tus hijos desde el día uno”</span>
+              </div>
+            </div>
+          </div>
+          <div><span>02</span><p>Explorar beneficios en vida y gastos críticos cubiertos.</p></div>
+          <div><span>03</span><p>Planificación de retiro y retiros con enfoque fiscal.</p></div>
+          <div><span>04</span><p>Transferencia intergeneracional y legado familiar.</p></div>
+        </div>
+        <div className="outcome-qualifier">Cada opción depende de los términos de la póliza, underwriting, jurisdicción y circunstancias individuales.</div>
+      </div>
     </div>
     <p className="footnote center">Los beneficios dependen del producto, sus términos, underwriting, jurisdicción y circunstancias individuales.</p>
   </SlideFrame>;
@@ -158,10 +182,28 @@ export function InteractiveGrowthCalculator() {
 
 export function PricingSlide() {
   return <SlideFrame className="pricing-slide">
-    <div className="pricing-head"><Eyebrow>La inversión · con transparencia</Eyebrow><h2>Un sistema claro.<br /><em>Una decisión informada.</em></h2><p>Revisemos el alcance, la inversión y si encaja con la etapa de tu práctica.</p></div>
+    <div className="pricing-head"><Eyebrow>La inversión · con transparencia</Eyebrow><h2>Un sistema claro.<br /><em>Una decisión informada.</em></h2></div>
     <div className="pricing-cards"><div className="price-card"><div className="price-top"><small>UNA SOLA VEZ</small><span>ARMADO</span></div><h3>Setup completo</h3><div className="price-amount"><Money value={1500}/><span>USD</span></div><p>Construcción de los activos para salir al mercado.</p><ul><li><Check/> Página y funnel</li><li><Check/> eBook e historia</li><li><Check/> Producción de video</li><li><Check/> Configuración de campaña</li></ul><div className="price-foot">Opción de 2 pagos de $750 USD</div></div>
-      <div className="price-card primary-price"><div className="price-top"><small>SERVICIO SEMANAL</small><span>OPERACIÓN</span></div><h3>Calificación y agenda</h3><div className="price-amount"><Money value={1000}/><span>USD / semana</span></div><p>Servicio semanal con objetivo operativo de hasta 10 reuniones calificadas; no garantizado.</p><ul><li><Check/> Contacto y filtro 1:1</li><li><Check/> Registro de estatus</li><li><Check/> Agenda y seguimiento</li><li><Check/> Optimización continua</li></ul><div className="price-foot">Tarifa mínima: $1,000 USD / semana</div></div>
-    </div><div className="close-band"><div><span>01</span><p>¿El modelo coincide con tus metas y tu capacidad de atención?</p></div><div><span>02</span><p>¿Qué necesitas validar antes de tomar una decisión?</p></div><div className="capacity-note">La capacidad mensual es operativa y limitada por recursos de implementación; se confirma disponibilidad al conversar.</div></div>
+      <div className="price-card primary-price"><div className="price-top"><small>SERVICIO SEMANAL</small><span>OPERACIÓN</span></div><h3>Calificación y agenda</h3><div className="price-amount"><Money value={1000}/><span>USD / semana</span></div><p>Servicio semanal con objetivo operativo de hasta 10 reuniones calificadas.</p><ul><li><Check/> Contacto y filtro 1:1</li><li><Check/> Registro de estatus</li><li><Check/> Agenda y seguimiento</li><li><Check/> Optimización continua</li></ul><div className="price-foot">Tarifa mínima: $1,000 USD / semana</div></div>
+    </div>
+    <div className="close-action-banner">
+      <div className="close-action-badge">
+        <span className="cupos-pulse" />
+        DISPONIBILIDAD OPERATIVA: 3 CUPOS ESTE MES
+      </div>
+      <p className="close-action-headline">
+        Bloquea uno de los 3 cupos disponibles este mes e iniciemos con la entrevista de diagnóstico.
+      </p>
+      <a
+        href="https://wa.me/18328901102?text=Hola%20Ascent,%20quiero%20bloquear%20uno%20de%20los%203%20cupos%20disponibles%20este%20mes%20para%20iniciar%20con%20la%20entrevista%20de%20diagn%C3%B3stico"
+        target="_blank"
+        rel="noreferrer"
+        className="close-action-cta"
+      >
+        <span>Bloquear mi cupo ahora</span>
+        <ArrowRight size={18} />
+      </a>
+    </div>
     <p className="pricing-disclaimer">El pago operativo de $997 corresponde a la semana de activación indicada en la ruta crítica; la oferta muestra una tarifa estándar de $1,000 por semana. No se cuenta como una tarifa adicional dentro del escenario de arranque. Alcance, fechas y condiciones se confirman por escrito. Cualquier producto y beneficio depende de términos, underwriting, jurisdicción y circunstancias individuales. Consulta a profesionales fiscales o legales con licencia.</p>
   </SlideFrame>;
 }

@@ -636,6 +636,55 @@
   border-top:1px solid rgba(121,187,178,.35);
 }
 
+.outcomes div.outcome-pillar {
+  grid-column: 1 / -1;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(112, 183, 175, 0.4);
+  border-radius: 6px;
+  padding: 16px 18px;
+}
+
+.outcome-title {
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 17px !important;
+  margin: 6px 0 10px !important;
+}
+
+.outcome-ebooks {
+  margin-top: 10px;
+  padding: 12px 14px;
+  background: rgba(74, 155, 155, 0.15);
+  border-left: 3px solid var(--ascent-teal-bright);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.outcome-ebooks small {
+  font-size: 11px;
+  letter-spacing: .16em;
+  color: #8ee2d9;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.outcome-book-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e5f0ec;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.outcome-book-item svg {
+  color: #8ee2d9;
+  flex-shrink: 0;
+}
+
 .outcomes span {
   color:#8ee2d9;
   font:italic 16px 'Playfair Display';
@@ -1820,38 +1869,82 @@
   margin-top:12px;
 }
 
-.close-band {
-  max-width:960px;
-  margin:18px auto 0;
-  display:grid;
-  grid-template-columns:1fr 1fr 1.15fr;
-  gap:16px;
-  align-items:center;
+.close-action-banner {
+  max-width: 960px;
+  margin: 18px auto 0;
+  background: linear-gradient(135deg, rgba(46, 91, 88, 0.4), rgba(23, 31, 36, 0.92));
+  border: 1px solid rgba(105, 188, 188, 0.5);
+  border-radius: 8px;
+  padding: 22px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
 }
 
-.close-band>div:not(.capacity-note) {
-  display:flex;
-  gap:12px;
-  align-items:flex-start;
+.close-action-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(109, 184, 166, 0.18);
+  border: 1px solid rgba(109, 184, 166, 0.4);
+  color: #92e8dc;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  padding: 6px 14px;
+  border-radius: 99px;
+  text-transform: uppercase;
 }
 
-.close-band>div>span {
-  color:#92ede2;
-  font:italic 17px 'Playfair Display';
+.cupos-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6db8a6;
+  box-shadow: 0 0 12px #6db8a6;
+  animation: pulseCupos 2s infinite;
 }
 
-.close-band p {
-  margin:0;
-  color:#d0deda;
-  font:italic 15px/1.5 'Playfair Display';
+@keyframes pulseCupos {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(109, 184, 166, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(109, 184, 166, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(109, 184, 166, 0); }
 }
 
-.capacity-note {
-  color:#a5b8b8;
-  font-size:13px;
-  line-height:1.6;
-  border-left:2px solid rgba(255,255,255,.16);
-  padding-left:16px;
+.close-action-headline {
+  margin: 0;
+  font: 500 20px/1.4 'Playfair Display', serif;
+  color: #f4faf2;
+  max-width: 760px;
+}
+
+.close-action-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #4a9b9b 0%, #3d8383 100%);
+  color: #ffffff;
+  padding: 13px 28px;
+  border-radius: 99px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(74, 155, 155, 0.4);
+  transition: all .25s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close-action-cta:hover {
+  background: linear-gradient(135deg, #5eb1b1 0%, #4a9b9b 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(74, 155, 155, 0.6);
+  color: #ffffff;
 }
 
 .pricing-disclaimer {
@@ -2149,9 +2242,9 @@
   .price-card>p { min-height:0;margin:6px 0;font-size: 13px; }
   .price-card li { font-size:12px;padding:5px 0; }
   .price-foot { padding-top:9px;margin-top:7px;font-size: 12px; }
-  .close-band { grid-template-columns:1fr 1fr;gap:10px;margin-top:14px; }
-  .close-band p { font-size:12px; }
-  .capacity-note { grid-column:1/-1;border-left:0;padding:7px 0 0;border-top:1px solid var(--ascent-line);font-size:11px; }
+  .close-action-banner { padding: 18px 16px; gap: 12px; }
+  .close-action-headline { font-size: 17px; }
+  .close-action-cta { width: 100%; font-size: 14px; padding: 12px 20px; }
   .pricing-disclaimer { font-size:10px;margin-top:10px; }
   .phase-nav { right:8px;gap:11px; }
   .phase-tooltip { right:19px; }
