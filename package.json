@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "homepage": "https://www.samuelchavero.com",
+  "homepage": "https://www.usaascent.com",
   "scripts": {
     "predeploy": "pnpm run build",
     "deploy": "gh-pages -d dist",

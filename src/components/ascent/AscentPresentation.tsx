@@ -106,15 +106,15 @@ export function AuthorityFunnel() {
   return <SlideFrame>
     <div className="slide-heading"><Eyebrow>Fase 02 · ecosistema digital</Eyebrow><h2>Que te encuentre alguien<br /><em>que ya se reconoce en ti.</em></h2><p>El “nicho espejo” conecta tu voz con personas que comparten idioma, valores, etapa o desafío.</p></div>
     <div className="funnel-layout"><div className="funnel-path">{steps.map((s, i) => <div className="funnel-step" key={s.n}><div className="funnel-node">{s.n}</div><div className="funnel-content"><small>{s.tag}</small><h3>{s.title}</h3><p>{s.body}</p></div>{i < steps.length - 1 && <div className="funnel-link" />}</div>)}</div>
-      <div className="landing-preview"><div className="preview-bar"><span /><span /><span /><small>ASCENT · PÁGINA DE CAMPAÑA</small></div><div className="preview-screen"><div className="preview-text"><small>UNA CONVERSACIÓN DISTINTA</small><h3>Tu próxima etapa<br /><em>empieza con una historia.</em></h3><p>Conoce opciones para cuidar lo que más importa.</p><button type="button">Descargar guía <ArrowRight size={12} /></button></div><div className="preview-person"><div className="person-circle">A</div><span>La voz del agente</span></div></div><div className="preview-footer"><span>VIDEO · PRUEBA SOCIAL · FORMULARIO</span><span>12 MESES INCLUIDOS</span></div></div>
-    </div><div className="integration-strip"><span><Check size={14} /> Captura de nombre y teléfono</span><span><Check size={14} /> CRM y registro de prospectos</span><span><Check size={14} /> Sitio web incluido por 12 meses</span><span className="disclaimer-inline">Sujeto a consentimiento, configuración y políticas de plataforma.</span></div>
+      <div className="landing-preview"><div className="preview-bar"><span /><span /><span /><small>ASCENT · WWW.USAASCENT.COM</small></div><div className="preview-screen"><div className="preview-text"><small>UNA CONVERSACIÓN DISTINTA</small><h3>Tu próxima etapa<br /><em>empieza con una historia.</em></h3><p>Conoce opciones para cuidar lo que más importa.</p><button type="button">Descargar guía <ArrowRight size={12} /></button></div><div className="preview-person"><div className="person-circle">A</div><span>La voz del agente</span></div></div><div className="preview-footer"><span>VIDEO · PRUEBA SOCIAL · FORMULARIO</span><span>12 MESES INCLUIDOS</span></div></div>
+    </div><div className="integration-strip"><span><Check size={14} /> Captura de nombre y teléfono</span><span><Check size={14} /> Base de datos y registro de prospectos</span><span><Check size={14} /> Sitio web incluido por 12 meses</span><span className="disclaimer-inline">Sujeto a consentimiento, configuración y políticas de plataforma.</span></div>
   </SlideFrame>;
 }
 
 export function QualificationSlide() {
   return <SlideFrame>
     <div className="qualification-layout"><div><Eyebrow>Fase 03 · producción y calificación</Eyebrow><h2>Tu energía vuelve<br /><em>a donde importa.</em></h2><p className="qual-intro">Un equipo de setters contacta a cada prospecto para explorar interés, capacidad y encaje antes de proponer una cita.</p><div className="status-list"><div><span className="status-dot muted" /> Contactado <small>Primer intento y contexto</small></div><div><span className="status-dot indigo" /> Agendado <small>Hora elegida y registrada</small></div><div><span className="status-dot teal" /> Confirmado <small>Recordatorio previo opcional</small></div></div></div>
-      <div className="calendar-card"><div className="calendar-top"><div><small>VISTA DE EJEMPLO</small><h3>Tu semana, con intención.</h3></div><div className="calendar-date">JUN <b>09—13</b></div></div><div className="calendar-grid"><div className="calendar-times"><span>9:00</span><span>10:00</span><span>11:00</span><span>12:00</span></div>{['LUN','MAR','MIÉ','JUE','VIE'].map((d,i)=><div className="calendar-day" key={d}><small>{d}</small>{[0,1,2].map((_,j)=><div className={`appointment ap-${(i+j)%4}`} key={j} style={{top:`${30+j*53+(i%2)*10}px`}}><b>{['9:30','10:15','11:00','12:30'][(i+j)%4]}</b><span>{['Revisión','Consulta','Seguimiento','Inicial'][(i+j)%4]}</span></div>)}</div>)}</div><div className="calendar-bottom"><ShieldCheck size={15} /> Objetivo operativo: hasta 10 reuniones calificadas por semana; volumen no garantizado.</div></div>
+      <div className="calendar-card"><div className="calendar-top"><div><small>VISTA DE EJEMPLO</small><h3>Tu semana, con intención.</h3></div><div className="calendar-date">JUN <b>09—13</b></div></div><div className="calendar-grid"><div className="calendar-times"><span>9:00</span><span>10:00</span><span>11:00</span><span>12:00</span></div>{['LUN','MAR','MIÉ','JUE','VIE'].map((d,i)=><div className="calendar-day" key={d}><small>{d}</small>{[0,1,2].map((_,j)=><div className={`appointment ap-${(i+j)%4}`} key={j} style={{top:`${30+j*53+(i%2)*10}px`}}><b>{['9:30','10:15','11:00','12:30'][(i+j)%4]}</b><span>{['Revisión','Consulta','Seguimiento','Inicial'][(i+j)%4]}</span></div>)}</div>)}</div><div className="calendar-bottom"><ShieldCheck size={15} /> Objetivo operativo: 10 a 15 reuniones calificadas por semana.</div></div>
     </div><p className="footnote">WhatsApp y otros recordatorios solo se envían cuando el prospecto ha dado su consentimiento.</p>
   </SlideFrame>;
 }
@@ -122,20 +122,19 @@ export function QualificationSlide() {
 export function TimelineSlide() {
   const phases = [
     { week:'01', label:'Semana 1', title:'Encontrar la historia', items:['Entrevista de identidad','Ángulo y guion editorial'] },
-    { week:'02', label:'Semana 2', title:'Construir el sistema', items:['eBook, página y video','CRM y flujo de campaña'] },
-    { week:'03', label:'Viernes previo', title:'Validar y activar', items:['Prueba de punta a punta','Activación operativa: $997'] },
+    { week:'02', label:'Semana 2', title:'Construir el sistema', items:['eBook, página y video','Automatización y flujo de campaña'] },
+    { week:'03', label:'Viernes previo', title:'Validar y activar', items:['Prueba de punta a punta','Activación y lanzamiento'] },
     { week:'04', label:'Semana 3+', title:'Medir y optimizar', items:['Objetivo: 10–15 citas semanales*','Aprendizaje continuo'] },
   ];
   return <SlideFrame>
     <div className="slide-heading"><Eyebrow>La ruta crítica · tres semanas de preparación</Eyebrow><h2>De una buena historia<br /><em>a un sistema en marcha.</em></h2><p>Una secuencia de trabajo visible, con responsables y decisiones claras.</p></div>
     <div className="timeline-track">{phases.map((p,i)=><div className={`timeline-phase tp-${i}`} key={p.week}><div className="timeline-dot">{p.week}</div><small>{p.label}</small><h3>{p.title}</h3><ul>{p.items.map(x=><li key={x}>{x}</li>)}</ul></div>)}</div>
-    <div className="activation-callout"><div className="activation-icon"><Check size={17}/></div><div><small>ANTES DE LANZAR</small><b>Pago operativo por el agendamiento de esa semana: $997</b></div><p>La oferta muestra una tarifa estándar de $1,000 por semana.</p></div>
     <p className="footnote">* 10–15 citas semanales es un objetivo, no una garantía. Depende de demanda, campaña, presupuesto, disponibilidad y criterios de calificación.</p>
   </SlideFrame>;
 }
 
 export function InteractiveGrowthCalculator() {
-  const [meetings, setMeetings] = useState(10);
+  const [meetings, setMeetings] = useState(12);
   const [closeRate, setCloseRate] = useState(10);
   const [premium, setPremium] = useState(250);
   const [commission, setCommission] = useState(85);
@@ -145,12 +144,13 @@ export function InteractiveGrowthCalculator() {
   const totalCitasMes1 = meetings * 2;
   const monthOneSales = weeklySales * 2;
   const monthOneGross = monthOneSales * perPolicy;
-  const monthOneCost = 1500 + (1000 * 2);
+  const weeklyCost = 997;
+  const monthOneCost = 1500 + (weeklyCost * 2);
   const monthOneNetIllustration = monthOneGross - monthOneCost;
   const totalCitasMes2 = meetings * 4;
   const monthTwoSales = weeklySales * 4;
   const monthTwoGross = monthTwoSales * perPolicy;
-  const monthTwoCost = 1000 * 4;
+  const monthTwoCost = weeklyCost * 4;
   const monthTwoNetIllustration = monthTwoGross - monthTwoCost;
   const annualGross = monthOneGross + (monthTwoGross * 11);
   const annualCost = monthOneCost + (monthTwoCost * 11);
@@ -173,7 +173,7 @@ export function InteractiveGrowthCalculator() {
       <div className="method-note"><span>MÉTODO DE PROYECCIÓN</span><p>Comisión/póliza = prima mensual × 12 × comisión %.</p><p>Ventas/semana = piso(citas semanales × tasa de cierre).</p><p>Mes 1: 2 semanas activas. Mes 2+: 4 semanas activas.</p></div>
     </div><div className="calc-results">
       <div className="scenario-cards"><div className="scenario-card"><small>MES 1 · 2 SEMANAS ACTIVAS</small><strong data-testid="month-one-sales">{monthOneSales}</strong><span>{totalCitasMes1} citas · ventas estimadas</span><b>{currency(monthOneGross)} <i>comisión bruta</i></b></div><div className="scenario-card featured"><small>MES 2+ · 4 SEMANAS ACTIVAS</small><strong data-testid="month-two-sales">{monthTwoSales}</strong><span>{totalCitasMes2} citas · ventas estimadas</span><b>{currency(monthTwoGross)} <i>comisión bruta / mes</i></b></div></div>
-      <div className="cost-comparison"><div><span>Comisión bruta · Mes 1</span><b>{currency(monthOneGross)}</b></div><div><span>Setup + 2 semanas activas · Mes 1</span><b className="cost-value">−{currency(monthOneCost)}</b></div><div className="net-row"><span>Beneficio neto ilustrativo · Mes 1</span><b data-testid="month-one-net">{currency(monthOneNetIllustration)}</b></div><div><span>Comisión bruta · Mes 2+</span><b data-testid="gross-monthly">{currency(monthTwoGross)}</b></div><div><span>4 semanas de servicio · Mes 2+</span><b className="cost-value">−{currency(monthTwoCost)}</b></div><div className="net-row"><span>Beneficio neto ilustrativo · Mes 2+</span><b data-testid="illustrative-net">{currency(monthTwoNetIllustration)}</b></div><div className="break-even"><span>Ventas para cubrir setup + servicio de Mes 1</span><b data-testid="break-even-sales">{breakEvenSales} <i>ventas</i></b></div></div>
+      <div className="cost-comparison"><div><span>Comisión bruta · Mes 1</span><b>{currency(monthOneGross)}</b></div><div><span>Setup + 2 semanas activas ($997/sem) · Mes 1</span><b className="cost-value">−{currency(monthOneCost)}</b></div><div className="net-row"><span>Beneficio neto ilustrativo · Mes 1</span><b data-testid="month-one-net">{currency(monthOneNetIllustration)}</b></div><div><span>Comisión bruta · Mes 2+</span><b data-testid="gross-monthly">{currency(monthTwoGross)}</b></div><div><span>4 semanas de servicio ($997/sem) · Mes 2+</span><b className="cost-value">−{currency(monthTwoCost)}</b></div><div className="net-row"><span>Beneficio neto ilustrativo · Mes 2+</span><b data-testid="illustrative-net">{currency(monthTwoNetIllustration)}</b></div><div className="break-even"><span>Ventas para cubrir setup + servicio de Mes 1</span><b data-testid="break-even-sales">{breakEvenSales} <i>ventas</i></b></div></div>
       <div className="annual-note"><div className="annual-metric"><span>12 MESES · COMISIÓN BRUTA</span><b data-testid="gross-annual">{currency(annualGross)}</b></div><div className="annual-metric"><span>12 MESES · NETO ILUSTRATIVO</span><b data-testid="net-annual">{currency(annualNetIllustration)}</b></div></div>
     </div></div>
     <div className="calc-disclaimer">Escenario ilustrativo, no pronóstico. El neto solo resta setup y servicio según las semanas activas indicadas; no contempla persistencia, adelantos, chargebacks, gastos de campaña, otros costos ni impuestos. Las comisiones, elegibilidad y términos dependen de cada póliza y contrato. Los resultados reales varían; no se garantizan ventas, ingresos ni citas. Consulta profesionales de impuestos o derecho con licencia.</div>
@@ -184,7 +184,7 @@ export function PricingSlide() {
   return <SlideFrame className="pricing-slide">
     <div className="pricing-head"><Eyebrow>La inversión · con transparencia</Eyebrow><h2>Un sistema claro.<br /><em>Una decisión informada.</em></h2></div>
     <div className="pricing-cards"><div className="price-card"><div className="price-top"><small>UNA SOLA VEZ</small><span>ARMADO</span></div><h3>Setup completo</h3><div className="price-amount"><Money value={1500}/><span>USD</span></div><p>Construcción de los activos para salir al mercado.</p><ul><li><Check/> Página y funnel</li><li><Check/> eBook e historia</li><li><Check/> Producción de video</li><li><Check/> Configuración de campaña</li></ul><div className="price-foot">Opción de 2 pagos de $750 USD</div></div>
-      <div className="price-card primary-price"><div className="price-top"><small>SERVICIO SEMANAL</small><span>OPERACIÓN</span></div><h3>Calificación y agenda</h3><div className="price-amount"><Money value={1000}/><span>USD / semana</span></div><p>Servicio semanal con objetivo operativo de hasta 10 reuniones calificadas.</p><ul><li><Check/> Contacto y filtro 1:1</li><li><Check/> Registro de estatus</li><li><Check/> Agenda y seguimiento</li><li><Check/> Optimización continua</li></ul><div className="price-foot">Tarifa mínima: $1,000 USD / semana</div></div>
+      <div className="price-card primary-price"><div className="price-top"><small>SERVICIO SEMANAL</small><span>OPERACIÓN</span></div><h3>Calificación y agenda</h3><div className="price-amount"><Money value={997}/><span>USD / semana</span></div><p>Servicio semanal con objetivo operativo de 10 a 15 reuniones calificadas.</p><ul><li><Check/> Contacto y filtro 1:1</li><li><Check/> Registro de estatus</li><li><Check/> Agenda y seguimiento</li><li><Check/> Optimización continua</li></ul><div className="price-foot">Tarifa mínima: $997 USD / semana</div></div>
     </div>
     <div className="close-action-banner">
       <div className="close-action-badge">
@@ -195,7 +195,7 @@ export function PricingSlide() {
         Bloquea uno de los 3 cupos disponibles este mes e iniciemos con la entrevista de diagnóstico.
       </p>
       <a
-        href="https://wa.me/18328901102?text=Hola%20Ascent,%20quiero%20bloquear%20uno%20de%20los%203%20cupos%20disponibles%20este%20mes%20para%20iniciar%20con%20la%20entrevista%20de%20diagn%C3%B3stico"
+        href="https://wa.me/5493415024095?text=Hola%20Samuel,%20quiero%20bloquear%20uno%20de%20los%203%20cupos%20disponibles%20este%20mes%20para%20iniciar%20con%20la%20entrevista%20de%20diagn%C3%B3stico"
         target="_blank"
         rel="noreferrer"
         className="close-action-cta"
@@ -204,7 +204,7 @@ export function PricingSlide() {
         <ArrowRight size={18} />
       </a>
     </div>
-    <p className="pricing-disclaimer">El pago operativo de $997 corresponde a la semana de activación indicada en la ruta crítica; la oferta muestra una tarifa estándar de $1,000 por semana. No se cuenta como una tarifa adicional dentro del escenario de arranque. Alcance, fechas y condiciones se confirman por escrito. Cualquier producto y beneficio depende de términos, underwriting, jurisdicción y circunstancias individuales. Consulta a profesionales fiscales o legales con licencia.</p>
+    <p className="pricing-disclaimer">Alcance, fechas y condiciones se confirman por escrito. Cualquier producto y beneficio depende de términos, underwriting, jurisdicción y circunstancias individuales. Consulta a profesionales fiscales o legales con licencia.</p>
   </SlideFrame>;
 }
 
