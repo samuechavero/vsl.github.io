@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ArrowRight, CheckCircle2, Workflow, ShieldCheck } from 'lucide-react';
+import { X, ArrowRight, CheckCircle2, Sparkles, ShieldCheck, Workflow } from 'lucide-react';
 import { supabase } from '../../lib/supabaseClient';
 
 interface BookingModalProps {
