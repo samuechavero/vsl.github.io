@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ArrowRight, CheckCircle2, Sparkles, ShieldCheck } from 'lucide-react';
+import { X, ArrowRight, CheckCircle2, Workflow, ShieldCheck } from 'lucide-react';
 import { supabase } from '../../lib/supabaseClient';
 
 interface BookingModalProps {
@@ -46,7 +46,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
       // Meta Pixel Lead tracking
       if (typeof window !== 'undefined' && (window as any).fbq) {
         (window as any).fbq('track', 'Lead', {
-          content_name: 'Diagnóstico Negoxia Autopilot',
+          content_name: 'Ecosistema Ascent by Flow Money',
         });
       }
 
@@ -55,7 +55,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
       // Open WhatsApp directly after short delay
       setTimeout(() => {
         const message = encodeURIComponent(
-          `Hola Negoxia Autopilot, mi nombre es ${name.trim()} y acabo de solicitar mi diagnóstico gratis de 30 minutos.`
+          `Hola Ascent by Flow Money, mi nombre es ${name.trim()} y quiero obtener mi Ecosistema CRM y Automatización 100% Plug & Play.`
         );
         window.open(`https://wa.me/18328901102?text=${message}`, '_blank');
       }, 1200);
@@ -84,23 +84,29 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
               {/* Header */}
               <div className="text-center mb-6">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1258FA]/10 text-[#1258FA] text-xs font-bold uppercase tracking-wider mb-4">
-                  <Sparkles size={13} />
-                  <span>Diagnóstico Estratégico · 30 Minutos</span>
+                  <Workflow size={13} />
+                  <span>Sesión de Alineación · Ecosistema Plug & Play</span>
                 </div>
 
-                <div className="flex justify-center mb-3">
-                  <img
-                    src="./brand/negoxia-logo.jpg"
-                    alt="Negoxia Autopilot"
-                    className="h-9 w-auto object-contain"
-                  />
+                <div className="flex items-center justify-center gap-2.5 mb-3">
+                  <div className="w-8 h-8 rounded-lg bg-[#060E32] flex items-center justify-center text-white font-extrabold text-base border border-[#EDE3D5]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-tr from-[#1258FA] to-[#16D1F5]">A</span>
+                  </div>
+                  <div className="flex flex-col text-left">
+                    <span className="text-base font-black tracking-tight text-[#060E32] leading-none">
+                      ASCENT
+                    </span>
+                    <span className="text-[10px] font-bold tracking-widest text-[#1258FA] uppercase">
+                      by Flow Money
+                    </span>
+                  </div>
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-extrabold text-[#060E32] tracking-tight">
-                  Reserva tu diagnóstico gratuito
+                  Obtén tu Ecosistema CRM & Meta Ads
                 </h3>
                 <p className="text-xs sm:text-sm text-[#556080] mt-1.5 max-w-sm mx-auto">
-                  Evaluaremos tu negocio y te mostraremos una simulación de cómo se vería tu clon de IA.
+                  Coordinaremos la entrega de tu máquina de ventas con GoHighLevel, Twilio y campañas activas.
                 </p>
               </div>
 
@@ -137,7 +143,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                     required
                   />
                   <p className="text-[11px] text-[#7380A0] mt-1">
-                    Te enviaremos los detalles de la videollamada y la confirmación a tu WhatsApp.
+                    Te enviaremos los accesos y la confirmación directa a tu WhatsApp.
                   </p>
                 </div>
 
@@ -152,13 +158,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                   disabled={submitting}
                   className="btn-primary w-full py-4 text-sm sm:text-base font-semibold flex items-center justify-center gap-2 mt-4 shadow-xl disabled:opacity-60 cursor-pointer"
                 >
-                  <span>{submitting ? 'Verificando disponibilidad...' : 'Confirmar y agendar diagnóstico'}</span>
+                  <span>{submitting ? 'Verificando...' : 'Obtener mi Ecosistema'}</span>
                   <ArrowRight size={17} />
                 </button>
 
                 <div className="flex items-center justify-center gap-1.5 text-[11px] text-[#7380A0] mt-3">
                   <ShieldCheck size={13} className="text-[#1258FA]" />
-                  <span>Sin costo ni compromiso · Tus datos están protegidos</span>
+                  <span>Sin fricción técnica · Tus datos están 100% protegidos</span>
                 </div>
               </form>
             </>

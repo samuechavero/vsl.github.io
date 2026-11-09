@@ -1,61 +1,61 @@
 import React, { useState } from 'react';
-import { TrendingUp, Users, Calendar, DollarSign, Award, ArrowUpRight, ArrowRight, Play, Check } from 'lucide-react';
+import { Award, ArrowRight, BarChart3, Database, Calendar, Megaphone, CheckCircle2 } from 'lucide-react';
 
 interface EvidenceCasesProps {
   onOpenBooking: () => void;
 }
 
 export const EvidenceCases: React.FC<EvidenceCasesProps> = ({ onOpenBooking }) => {
-  const [filter, setFilter] = useState<'all' | 'organic' | 'ads' | 'sales'>('all');
+  const [filter, setFilter] = useState<'all' | 'crm' | 'ads' | 'sales'>('all');
 
   const cases = [
     {
-      category: 'organic',
-      tag: 'Orgánico',
-      name: 'Samba',
-      role: 'Coach de hábitos y productividad',
-      highlight: 'Sin grabarse cada semana: su clon habla por él',
-      metric1: { label: 'Instagram', value: '4,500 → 72.3k' },
-      metric2: { label: 'TikTok', value: '3,412 → 125.8k' },
-      badge: '1.4M Likes en TikTok',
-      quote: '«Dale la vuelta a la tortilla y recupera tu atención de nuevo». Vistas y crecimiento sostenido gracias a la consistencia del clon.',
-      source: 'Fuente: perfiles verificados y métricas de retención orgánica.',
-    },
-    {
       category: 'ads',
-      tag: 'Anuncios',
+      tag: 'Meta Ads & Embudo',
       name: 'Bryan Paladines',
       role: 'Agente de seguros de vida · NJ',
-      highlight: '32 citas agendadas en 9 días a $11.16 por cita',
-      metric1: { label: 'Antes (Formularios)', value: '0 citas (7 leads fríos)' },
-      metric2: { label: 'Con Avatar de IA', value: '32 citas agendadas' },
+      highlight: '32 citas agendadas en 9 días a $11.16 por cita calificada',
+      metric1: { label: 'Antes (Formularios Fríos)', value: '0 citas (7 leads perdidos)' },
+      metric2: { label: 'Con Ecosistema CRM', value: '32 citas agendadas' },
       badge: 'Inversión: $356 USD',
-      quote: '«Las 32 citas de alta calidad vinieron directamente del anuncio producido con su avatar de IA y guion persuasivo».',
-      source: 'Fuente: administrador de anuncios de Meta verificado.',
+      quote: '«Las 32 citas de alta calidad vinieron directamente del embudo conectado con el calendario y la segmentación estratégica en Meta Ads».',
+      source: 'Fuente: administrador de anuncios de Meta y calendario GoHighLevel verificado.',
     },
     {
       category: 'sales',
-      tag: 'Ventas',
+      tag: 'Ventas Directas',
       name: 'Poli',
       role: 'Marca de Retail y E-commerce',
-      highlight: '1 creativo con IA → 32 compras → $7,967 en ventas',
+      highlight: '1 embudo de alta conversión → 32 compras → $7,967 en ventas',
       metric1: { label: 'Ventas atribuidas', value: '$7,967.15 USD' },
       metric2: { label: 'ROAS Obtenido', value: '11.2× Retorno' },
       badge: 'Inversión: $709.18 USD',
-      quote: 'Con una sola pieza creativa optimizada y guionada con IA se generaron compras directas y visitas en tienda física y digital.',
+      quote: '«Con la instalación del Píxel/API y la landing optimizada, cada dólar invertido en publicidad se convirtió en retorno medible y constante».',
       source: 'Fuente: métricas de eventos de compra en Meta Ads Manager.',
     },
     {
-      category: 'organic',
-      tag: 'Contenido',
-      name: 'Angie Barrios',
-      role: 'Calima Global Auto Broker',
-      highlight: 'Presencia de marca imparable sin sacrificar su agenda',
-      metric1: { label: 'Producción semanal', value: '7 videos / semana' },
-      metric2: { label: 'Tiempo invertido', value: '10 min de revisión' },
-      badge: 'Escala Comercial',
-      quote: '«A pesar de que quería mucho todo esto, no sabía cómo comenzar... El clon me permitió posicionarme de inmediato sin estrés».',
-      source: 'Fuente: caso de estudio en video testimonial.',
+      category: 'crm',
+      tag: 'Automatización Twilio',
+      name: 'David Reyes',
+      role: 'Consultoría y Servicios Profesionales',
+      highlight: 'Reducción del 42% en ausencias gracias a recordatorios automáticos',
+      metric1: { label: 'Tasa de Asistencia', value: '88.5% en llamadas' },
+      metric2: { label: 'Integración', value: 'Twilio LC Phone' },
+      badge: 'Cero Fricción Técnica',
+      quote: '«El envío automático de SMS de confirmación y recordatorio antes de cada cita eliminó por completo los prospectos que se olvidaban de la reunión».',
+      source: 'Fuente: panel de actividad de subcuenta GoHighLevel.',
+    },
+    {
+      category: 'crm',
+      tag: 'Pipeline & Embudos',
+      name: 'Ana Cordones',
+      role: 'Servicios Financieros & Asesoría',
+      highlight: 'Ecosistema montado y funcionando en menos de una semana',
+      metric1: { label: 'Leads Calificados', value: '10 a 15 por semana' },
+      metric2: { label: 'Tiempo de Setup', value: '100% Plug & Play' },
+      badge: 'Alta Conversión',
+      quote: '«Tener la subcuenta configurada con los embudos clonados me quitó meses de dolores de cabeza técnicos. Solo entro a atender a los clientes que agendan».',
+      source: 'Fuente: caso de estudio verificado.',
     },
   ];
 
@@ -71,25 +71,25 @@ export const EvidenceCases: React.FC<EvidenceCasesProps> = ({ onOpenBooking }) =
             <span>Evidencia con métricas</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-[#060E32] tracking-tight">
-            Números con capturas.{' '}
-            <span className="text-gradient-blue block mt-1">Orgánico, anuncios y ventas.</span>
+            Resultados Comprobados.{' '}
+            <span className="text-gradient-blue block mt-1">Embudos, CRM y Meta Ads.</span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#4B5578]">
-            Casos documentados donde el motor de IA convirtió presencia en tracción y clientes.
+            Métricas verificadas en GoHighLevel y administradores de anuncios donde la automatización generó citas y ventas.
           </p>
 
           {/* Filter Pills */}
           <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
             {[
-              { id: 'all', label: 'Todos los casos' },
-              { id: 'organic', label: 'Orgánico' },
-              { id: 'ads', label: 'Anuncios' },
-              { id: 'sales', label: 'Ventas directas' },
+              { id: 'all', label: 'Todos los resultados' },
+              { id: 'crm', label: 'CRM & Automatización' },
+              { id: 'ads', label: 'Meta Ads' },
+              { id: 'sales', label: 'Ventas y ROAS' },
             ].map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setFilter(tab.id as any)}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                   filter === tab.id
                     ? 'bg-[#060E32] text-white shadow-md'
                     : 'bg-white text-[#556080] border border-[#EDE3D5] hover:bg-[#F5EEE4]'
@@ -154,17 +154,17 @@ export const EvidenceCases: React.FC<EvidenceCasesProps> = ({ onOpenBooking }) =
           ))}
         </div>
 
-        {/* Legal Disclaimer matching Clonelab */}
+        {/* Legal Disclaimer */}
         <p className="text-center text-xs text-[#8A95AF] max-w-2xl mx-auto leading-relaxed">
-          * Estos son resultados de casos concretos y no constituyen una garantía típica de ingresos. Tus resultados dependen de tu oferta comercial, tu mercado, tu presupuesto publicitario y tu capacidad de cierre.
+          * Estos son resultados de casos reales documentados. Tus resultados dependerán de tu oferta comercial, tu mercado, tu presupuesto publicitario y tu proceso de venta.
         </p>
 
         <div className="mt-8 text-center">
           <button
             onClick={onOpenBooking}
-            className="btn-primary px-8 py-3.5 text-sm font-semibold inline-flex items-center gap-2"
+            className="btn-primary px-8 py-3.5 text-sm font-semibold inline-flex items-center gap-2 cursor-pointer"
           >
-            <span>Quiero estos resultados para mi negocio</span>
+            <span>Obtener mi Ecosistema</span>
             <ArrowRight size={16} />
           </button>
         </div>

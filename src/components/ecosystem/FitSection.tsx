@@ -1,19 +1,19 @@
 import React from 'react';
-import { Check, X, ShieldAlert, Sparkles } from 'lucide-react';
+import { Check, X } from 'lucide-react';
 
 export const FitSection: React.FC = () => {
   const isForYou = [
-    'Tienes un negocio en marcha o vendes tu conocimiento y ya cuentas con clientes activos.',
-    'Sabes que necesitas contenido todos los días para liderar tu nicho, pero tu agenda no te permite sentarte a grabarte horas.',
-    'Buscas resultados tanto orgánicos como de anuncios pagados sin tener que armar un equipo de producción costoso ni pagar retainers mensuales abusivos.',
-    'Valoras tener control total: quieres que un sistema inteligente cree todo, pero manteniendo la última palabra para aprobar cada pieza.',
+    'Tienes un negocio de servicios, consultoría, coaching o infoproductos y buscas un flujo predecible de llamadas calificadas.',
+    'Estás harto de perder prospectos por desorden entre hojas de cálculo, mensajes sueltos y herramientas desconectadas.',
+    'Quieres una subcuenta en GoHighLevel con embudos, calendarios y secuencias de Twilio listas para operar sin lidiar con la parte técnica.',
+    'Buscas un equipo profesional que gestione tus campañas en Meta Ads con instalación precisa de Píxel/API y revisión constante de métricas.',
   ];
 
   const isNotForYou = [
-    'Todavía no tienes una oferta validada ni sabes quién es tu cliente ideal.',
-    'Buscas "trucos mágicos" o resultados de la noche a la mañana sin estrategia ni procesos comerciales de cierre.',
-    'No estás dispuesto a dedicar 30 minutos a una sesión de diagnóstico inicial o a realizar una única grabación guiada.',
-    'No quieres que un clon hiperrealista de IA hable y comunique por ti.',
+    'Todavía no cuentas con una oferta validada ni tienes claridad sobre tu cliente ideal.',
+    'Buscas resultados mágicos de un día para otro sin disposición a invertir en pauta publicitaria ni a cerrar tus llamadas.',
+    'Prefieres continuar haciendo seguimientos manuales uno por uno en lugar de automatizar tus confirmaciones y pipelines.',
+    'No estás dispuesto a dedicar 30 minutos a una sesión estratégica para coordinar la puesta en marcha de tu ecosistema.',
   ];
 
   return (
@@ -27,7 +27,7 @@ export const FitSection: React.FC = () => {
             ¿Para quién es y para quién no?
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#4B5578]">
-            Queremos trabajar con quienes realmente pueden multiplicar sus resultados con este motor.
+            Trabajamos con negocios que están listos para profesionalizar y escalar su sistema de captación y ventas.
           </p>
         </div>
 

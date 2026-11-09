@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './components/negoxia/Navbar';
-import { Hero } from './components/negoxia/Hero';
-import { Problem } from './components/negoxia/Problem';
-import { HowItWorks } from './components/negoxia/HowItWorks';
-import { EvidenceCases } from './components/negoxia/EvidenceCases';
-import { OfferIncluded } from './components/negoxia/OfferIncluded';
-import { Founder } from './components/negoxia/Founder';
-import { FitSection } from './components/negoxia/FitSection';
-import { FaqSection } from './components/negoxia/FaqSection';
-import { FinalCta } from './components/negoxia/FinalCta';
-import { Footer } from './components/negoxia/Footer';
-import { BookingModal } from './components/negoxia/BookingModal';
+import { Navbar } from './components/ecosystem/Navbar';
+import { Hero } from './components/ecosystem/Hero';
+import { Problem } from './components/ecosystem/Problem';
+import { HowItWorks } from './components/ecosystem/HowItWorks';
+import { EvidenceCases } from './components/ecosystem/EvidenceCases';
+import { OfferIncluded } from './components/ecosystem/OfferIncluded';
+import { Founder } from './components/ecosystem/Founder';
+import { FitSection } from './components/ecosystem/FitSection';
+import { FaqSection } from './components/ecosystem/FaqSection';
+import { FinalCta } from './components/ecosystem/FinalCta';
+import { Footer } from './components/ecosystem/Footer';
+import { BookingModal } from './components/ecosystem/BookingModal';
 import { AscentPresentation } from './components/ascent/AscentPresentation';
 
 export default function App() {
