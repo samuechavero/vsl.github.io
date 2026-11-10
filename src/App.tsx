@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import { supabase } from "./lib/supabaseClient";
+import Formulario from "./Formulario";
+import { supabase } from "./supabase";
 
 const WHATSAPP_URL = "https://wa.me/18328901102?text=Hola%20Ascent,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20sistema";
 const INSTAGRAM_URL = "https://www.instagram.com/ascentllc.us/";
@@ -64,118 +65,18 @@ const TOP_PRODUCERS: TopProducer[] = [
 ];
 
 function Modal({ onUnlock }: { onUnlock: () => void }) {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
-    if (name.trim().length < 2) {
-      setError("Por favor, ingresa tu nombre.");
-      return;
-    }
-    const cleanPhone = phone.replace(/\D/g, "");
-    if (cleanPhone.length < 8) {
-      setError("Por favor, ingresa un número de WhatsApp válido.");
-      return;
-    }
-    setSubmitting(true);
-
-    try {
-      const { error: insertError } = await supabase
-        .from("leads")
-        .insert([{ nombre: name.trim(), telefono: cleanPhone }]);
-
-      if (insertError) {
-        console.error("Supabase insert error:", insertError);
-        setError("Hubo un problema de conexión. Inténtalo de nuevo.");
-        setSubmitting(false);
-        return;
-      }
-
-      if (typeof window !== "undefined" && (window as any).fbq) {
-        (window as any).fbq("track", "Lead");
-      }
-
-      onUnlock();
-    } catch (err) {
-      console.error("Unexpected error:", err);
-      setError("Ocurrió un error inesperado.");
-      setSubmitting(false);
-    }
-  };
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6 overflow-y-auto">
-      <div className="absolute inset-0 bg-[#051314]/80 backdrop-blur-md" />
+      <div className="absolute inset-0 bg-[#051314]/85 backdrop-blur-md" />
       <div className="relative w-full max-w-md fade-in">
-        <div className="gem-card rounded-2xl p-7 sm:p-9 shadow-2xl">
-          <div className="flex items-center justify-center mb-5">
-            <div className="h-px w-10 bg-[#4A9B9B]/60" />
-            <span className="px-3 text-[10px] tracking-[0.3em] uppercase diamond-text font-semibold">Acceso Privado</span>
-            <div className="h-px w-10 bg-[#4A9B9B]/60" />
-          </div>
-          <div className="flex justify-center mb-4">
-            <img src="./ascent-logo.jpg" alt="Ascent LLC" className="h-10 w-auto object-contain rounded" />
-          </div>
-          <h2 className="font-display text-3xl sm:text-4xl text-center leading-tight">
-            Hay un video <span className="diamond-text italic">especial</span> para ti.
-          </h2>
-          <p className="text-center text-sm text-[var(--fg-muted)] mt-3">
-            Completa los datos para desbloquear el acceso inmediato.
-          </p>
-
-          <form onSubmit={handleSubmit} className="mt-7 space-y-4">
-            <div>
-              <label htmlFor="name" className="block text-xs uppercase tracking-widest text-[var(--fg-muted)] mb-2">
-                Tu Nombre
-              </label>
-              <input
-                id="name"
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="input-gem w-full px-4 py-3 rounded-lg text-base"
-                placeholder="Nombre y apellido"
-                autoComplete="name"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="phone" className="block text-xs uppercase tracking-widest text-[var(--fg-muted)] mb-2">
-                Tu Número de WhatsApp
-              </label>
-              <input
-                id="phone"
-                type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="input-gem w-full px-4 py-3 rounded-lg text-base"
-                placeholder="+1 (832) 890 1102"
-                autoComplete="tel"
-                required
-              />
-            </div>
-
-            {error && (
-              <div className="text-sm text-red-400 text-center">{error}</div>
-            )}
-
-            <button
-              type="submit"
-              disabled={submitting}
-              className="btn-gem w-full py-4 rounded-lg text-base sm:text-lg uppercase tracking-wider mt-2 disabled:opacity-60"
-            >
-              {submitting ? "Desbloqueando..." : "Ver el Video"}
-            </button>
-          </form>
-
-          <p className="text-[11px] text-center text-[var(--fg-muted)] mt-5 leading-relaxed">
-            Tu información es 100% confidencial. Solo se usará para enviarte recursos relacionados.
-          </p>
-        </div>
+        <Formulario
+          badge="Acceso Privado"
+          title="Hay un video especial para ti."
+          subtitle="Completa los datos para desbloquear el acceso inmediato."
+          buttonText="Ver el Video"
+          showLogo={true}
+          onSuccess={onUnlock}
+        />
       </div>
     </div>
   );
@@ -767,6 +668,11 @@ function MainContent({ unlocked }: { unlocked: boolean }) {
       <ClientsSection />
       <EbookSection />
       <AuthoritySection />
+      <section id="formulario-registro" className="py-16 sm:py-20 px-5 relative border-t border-[rgba(226,232,240,0.1)]">
+        <div className="max-w-xl mx-auto">
+          <Formulario />
+        </div>
+      </section>
       <FinalCTA />
       <Footer />
     </div>
