@@ -19,8 +19,20 @@ import { SocialProofToast } from './components/negoxia/SocialProofToast';
 
 export default function App() {
   // 1. Acceso Bloqueado (Gated Content)
-  const [unlocked, setUnlocked] = useState(false);
+  const [unlocked, setUnlocked] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('negoxia_unlocked') === 'true';
+    }
+    return false;
+  });
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+
+  const handleUnlock = () => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('negoxia_unlocked', 'true');
+    }
+    setUnlocked(true);
+  };
 
   // Bloqueo de scroll mientras el contenido esté bloqueado
   useEffect(() => {
@@ -100,21 +112,30 @@ export default function App() {
           onScrollToCalculator={scrollToCalculator}
         />
 
-        {/* Elementos Flotantes de Conversión y Social Proof */}
-        {unlocked && (
-          <>
-            <FloatingEbookBadge />
-            <SocialProofToast />
-          </>
-        )}
       </div>
 
       {/* 1. Modal de Acceso Bloqueado (Gated Content Overlay) */}
       {!unlocked && (
         <GatedModal
-          onUnlock={() => setUnlocked(true)}
+          onUnlock={handleUnlock}
         />
       )}
+
+      {/* Elementos Flotantes de Conversión y Social Proof (z-50) */}
+      <FloatingEbookBadge
+        onScrollClick={() => {
+          if (!unlocked) {
+            handleUnlock();
+          }
+          setTimeout(() => {
+            const el = document.getElementById('ebook');
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 150);
+        }}
+      />
+      <SocialProofToast />
 
       {/* Modal Secundario de Agendamiento desde los CTAs de la página */}
       <BookingModal
