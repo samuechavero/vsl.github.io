@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { ArrowDown } from 'lucide-react';
 
 interface FloatingEbookBadgeProps {
@@ -6,6 +7,12 @@ interface FloatingEbookBadgeProps {
 }
 
 export const FloatingEbookBadge: React.FC<FloatingEbookBadgeProps> = ({ onScrollClick }) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const handleClick = () => {
     if (onScrollClick) {
       onScrollClick();
@@ -17,8 +24,12 @@ export const FloatingEbookBadge: React.FC<FloatingEbookBadgeProps> = ({ onScroll
     }
   };
 
-  return (
-    <aside aria-label="Aviso de E-book de regalo" className="fixed bottom-4 right-4 z-50">
+  const content = (
+    <div
+      aria-label="Aviso de E-book de regalo"
+      className="fixed bottom-6 right-6 z-[9999] pointer-events-auto"
+      style={{ position: 'fixed', bottom: '1.5rem', right: '1.5rem', zIndex: 9999 }}
+    >
       <button
         onClick={handleClick}
         type="button"
@@ -33,6 +44,13 @@ export const FloatingEbookBadge: React.FC<FloatingEbookBadgeProps> = ({ onScroll
           className="text-[#16D1F5] group-hover:translate-y-0.5 transition-transform shrink-0"
         />
       </button>
-    </aside>
+    </div>
   );
+
+  if (!mounted || typeof document === 'undefined') {
+    return null;
+  }
+
+  // Portal directo a document.body para aislarlo de transform / filter / relative
+  return createPortal(content, document.body);
 };
