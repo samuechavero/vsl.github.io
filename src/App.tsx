@@ -14,6 +14,8 @@ import { FaqSection } from './components/negoxia/FaqSection';
 import { FinalCta } from './components/negoxia/FinalCta';
 import { Footer } from './components/negoxia/Footer';
 import { BookingModal } from './components/negoxia/BookingModal';
+import { FloatingEbookBadge } from './components/negoxia/FloatingEbookBadge';
+import { SocialProofToast } from './components/negoxia/SocialProofToast';
 
 export default function App() {
   // 1. Acceso Bloqueado (Gated Content)
@@ -97,6 +99,14 @@ export default function App() {
         <Footer
           onScrollToCalculator={scrollToCalculator}
         />
+
+        {/* Elementos Flotantes de Conversión y Social Proof */}
+        {unlocked && (
+          <>
+            <FloatingEbookBadge />
+            <SocialProofToast />
+          </>
+        )}
       </div>
 
       {/* 1. Modal de Acceso Bloqueado (Gated Content Overlay) */}
