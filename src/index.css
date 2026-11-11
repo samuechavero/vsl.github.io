@@ -215,3 +215,46 @@ input[type="range"]::-webkit-slider-thumb:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #1258FA;
 }
+
+/* Gated Content Blur */
+.blur-bg {
+  filter: blur(16px);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 3D Book Mockup */
+.book {
+  perspective: 1000px;
+  display: inline-block;
+}
+.book-inner {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  transform: rotateY(-20deg) rotateX(4deg);
+  transform-style: preserve-3d;
+  box-shadow:
+    -18px 20px 44px -10px rgba(6, 14, 50, 0.45),
+    2px 2px 0 rgba(18, 88, 250, 0.35),
+    4px 4px 0 rgba(22, 209, 245, 0.2);
+  background: linear-gradient(135deg, #060E32 0%, #0A1E66 60%, #1258FA 100%);
+  border: 1px solid rgba(22, 209, 245, 0.4);
+  border-radius: 4px 10px 10px 4px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+.book:hover .book-inner {
+  transform: rotateY(-10deg) rotateX(2deg) scale(1.03);
+}
+.book-inner::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 14px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.5), transparent);
+}
+@media (min-width: 768px) {
+  .book-inner { width: 280px; height: 390px; }
+}
+
