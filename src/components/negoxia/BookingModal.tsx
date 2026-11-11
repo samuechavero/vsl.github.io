@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, ArrowRight, CheckCircle2, Sparkles, ShieldCheck } from 'lucide-react';
-import { supabase } from '../../lib/supabaseClient';
+import { supabase } from '../../supabase';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -25,18 +25,18 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
       return;
     }
 
-    const cleanPhone = phone.replace(/\D/g, '');
-    if (cleanPhone.length < 8) {
-      setError('Por favor, ingresa un número de WhatsApp válido con código de área.');
+    const cleanPhone = phone.trim();
+    if (cleanPhone.length < 7) {
+      setError('Por favor, ingresa un número de WhatsApp válido.');
       return;
     }
 
     setSubmitting(true);
 
     try {
-      // Save lead to Supabase
+      // Save lead to Supabase in table 'prospectos'
       const { error: insertError } = await supabase
-        .from('leads')
+        .from('prospectos')
         .insert([{ nombre: name.trim(), telefono: cleanPhone }]);
 
       if (insertError) {
@@ -55,7 +55,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
       // Open WhatsApp directly after short delay
       setTimeout(() => {
         const message = encodeURIComponent(
-          `Hola Negoxia Autopilot, mi nombre es ${name.trim()} y acabo de solicitar mi diagnóstico gratis de 30 minutos.`
+          `Hola Negoxia Autopilot, mi nombre es ${name.trim()} y quiero construir mi máquina de ventas y agendar mi diagnóstico.`
         );
         window.open(`https://wa.me/18328901102?text=${message}`, '_blank');
       }, 1200);
@@ -67,14 +67,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6 overflow-y-auto modal-overlay">
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6 overflow-y-auto modal-overlay bg-[#060E32]/75 backdrop-blur-md">
       <div className="relative w-full max-w-lg fade-in my-auto">
         <div className="bg-[#FFF9F2] rounded-3xl p-6 sm:p-9 shadow-2xl border border-[#EDE3D5] relative overflow-hidden">
           {/* Close button */}
           <button
             onClick={onClose}
             type="button"
-            className="absolute top-5 right-5 w-9 h-9 rounded-full bg-[#060E32]/5 hover:bg-[#060E32]/10 flex items-center justify-center text-[#060E32] transition-colors"
+            className="absolute top-5 right-5 w-9 h-9 rounded-full bg-[#060E32]/5 hover:bg-[#060E32]/10 flex items-center justify-center text-[#060E32] transition-colors cursor-pointer"
           >
             <X size={18} />
           </button>
@@ -92,57 +92,57 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                   <img
                     src="./brand/negoxia-logo.jpg"
                     alt="Negoxia Autopilot"
-                    className="h-9 w-auto object-contain"
+                    className="h-10 w-auto object-contain"
                   />
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-extrabold text-[#060E32] tracking-tight">
-                  Reserva tu diagnóstico gratuito
+                  Construir mi Máquina de Ventas
                 </h3>
                 <p className="text-xs sm:text-sm text-[#556080] mt-1.5 max-w-sm mx-auto">
-                  Evaluaremos tu negocio y te mostraremos una simulación de cómo se vería tu clon de IA.
+                  Completa tus datos para coordinar tu sesión de diagnóstico y evaluar la activación de tu ecosistema.
                 </p>
               </div>
 
               {/* Form */}
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-[#060E32] mb-1.5">
-                    Tu Nombre Completo
+                  <label htmlFor="modal-name" className="block text-xs uppercase tracking-wider font-bold text-[#060E32] mb-1.5">
+                    Tu Nombre y Apellido <span className="text-[#1258FA]">*</span>
                   </label>
                   <input
-                    id="name"
+                    id="modal-name"
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Ej. Carlos Mendoza"
+                    placeholder="Ej. Roberto Sánchez"
                     className="input-clean"
-                    autoComplete="name"
                     required
+                    disabled={submitting}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-[#060E32] mb-1.5">
-                    Tu Número de WhatsApp
+                  <label htmlFor="modal-phone" className="block text-xs uppercase tracking-wider font-bold text-[#060E32] mb-1.5">
+                    Tu Número de WhatsApp <span className="text-[#1258FA]">*</span>
                   </label>
                   <input
-                    id="phone"
+                    id="modal-phone"
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="Ej. +1 (555) 000-0000"
+                    placeholder="+1 (832) 890 1102"
                     className="input-clean"
-                    autoComplete="tel"
                     required
+                    disabled={submitting}
                   />
-                  <p className="text-[11px] text-[#7380A0] mt-1">
-                    Te enviaremos los detalles de la videollamada y la confirmación a tu WhatsApp.
-                  </p>
+                  <span className="text-[11px] text-[#8C96AB] mt-1 block">
+                    Te enviaremos los detalles de acceso y confirmación por WhatsApp.
+                  </span>
                 </div>
 
                 {error && (
-                  <div className="p-3 bg-red-50 border border-red-200 rounded-xl text-xs text-red-600 font-medium">
+                  <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-red-600 text-xs font-medium">
                     {error}
                   </div>
                 )}
@@ -150,33 +150,40 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="btn-primary w-full py-4 text-sm sm:text-base font-semibold flex items-center justify-center gap-2 mt-4 shadow-xl disabled:opacity-60 cursor-pointer"
+                  className="btn-primary w-full py-4 text-sm sm:text-base font-bold flex items-center justify-center gap-2 shadow-xl mt-2 cursor-pointer disabled:opacity-50"
                 >
-                  <span>{submitting ? 'Verificando disponibilidad...' : 'Confirmar y agendar diagnóstico'}</span>
-                  <ArrowRight size={17} />
+                  {submitting ? (
+                    <span>Procesando...</span>
+                  ) : (
+                    <>
+                      <span>Solicitar Diagnóstico Gratuito</span>
+                      <ArrowRight size={17} />
+                    </>
+                  )}
                 </button>
-
-                <div className="flex items-center justify-center gap-1.5 text-[11px] text-[#7380A0] mt-3">
-                  <ShieldCheck size={13} className="text-[#1258FA]" />
-                  <span>Sin costo ni compromiso · Tus datos están protegidos</span>
-                </div>
               </form>
+
+              {/* Trust footer */}
+              <div className="mt-5 pt-4 border-t border-[#EDE3D5] flex items-center justify-center gap-2 text-[11px] text-[#8C96AB]">
+                <ShieldCheck size={14} className="text-[#1258FA]" />
+                <span>100% Confidencial · Cero spam · Sin compromiso</span>
+              </div>
             </>
           ) : (
-            <div className="text-center py-8 animate-fadeIn">
-              <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center mb-4">
+            /* Success confirmation */
+            <div className="text-center py-6 animate-fadeIn">
+              <div className="w-16 h-16 rounded-full bg-[#1258FA]/15 text-[#1258FA] flex items-center justify-center mx-auto mb-4">
                 <CheckCircle2 size={36} />
               </div>
-              <h3 className="text-2xl font-bold text-[#060E32] mb-2">¡Solicitud Recibida!</h3>
+              <h3 className="text-2xl font-black text-[#060E32] mb-2">
+                ¡Solicitud Recibida!
+              </h3>
               <p className="text-sm text-[#556080] max-w-sm mx-auto mb-6">
-                Estamos abriendo tu conversación de WhatsApp para coordinar el día y horario exacto de tu sesión.
+                Te estamos redirigiendo a WhatsApp para confirmar tu horario de diagnóstico inmediatamente...
               </p>
-              <button
-                onClick={onClose}
-                className="btn-secondary px-6 py-2.5 text-xs font-bold"
-              >
-                Cerrar ventana
-              </button>
+              <div className="p-4 rounded-2xl bg-[#FFF9F2] border border-[#EDE3D5] text-xs text-[#1258FA] font-semibold">
+                Abriendo chat oficial de Negoxia Autopilot...
+              </div>
             </div>
           )}
         </div>

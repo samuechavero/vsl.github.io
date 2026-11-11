@@ -1,12 +1,12 @@
 import React from 'react';
-import { Sparkles } from 'lucide-react';
+import { Calculator } from 'lucide-react';
 
 interface FooterProps {
-  onOpenPresentation?: () => void;
   onOpenBooking: () => void;
+  onScrollToCalculator?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenPresentation, onOpenBooking }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onScrollToCalculator }) => {
   return (
     <footer className="bg-[#04081E] text-[#FFF9F2] pt-14 pb-12 px-4 sm:px-6 border-t border-white/10">
       <div className="max-w-6xl mx-auto">
@@ -16,44 +16,47 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPresentation, onOpenBookin
             <img
               src="./brand/negoxia-logo.jpg"
               alt="Negoxia Autopilot"
-              className="h-9 w-auto object-contain rounded brightness-105"
+              className="h-10 w-auto object-contain rounded"
             />
-            <p className="text-xs text-[#FFF9F2]/60 text-center md:text-left max-w-sm mt-1">
-              El motor de inteligencia artificial que crea y publica tu contenido y anuncios sin grabarte nunca más.
+            <p className="text-xs text-[#FFF9F2]/70 text-center md:text-left max-w-sm mt-1">
+              Tu Ecosistema CRM y Automatización 100% "Plug & Play" para agentes de seguros de vida. Embudos, calendarios y publicidad gestionada en Meta Ads.
             </p>
           </div>
 
           {/* Nav / Links */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-[#FFF9F2]/75 font-medium">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-[#FFF9F2]/80 font-medium">
             <button
               onClick={onOpenBooking}
-              className="hover:text-[#16D1F5] transition-colors"
+              className="hover:text-[#16D1F5] transition-colors cursor-pointer"
             >
-              Diagnóstico gratis
+              Construir Máquina de Ventas
             </button>
-            {onOpenPresentation && (
+            {onScrollToCalculator && (
               <button
-                onClick={onOpenPresentation}
-                className="hover:text-[#16D1F5] transition-colors flex items-center gap-1 text-[#16D1F5]"
+                onClick={onScrollToCalculator}
+                className="hover:text-[#16D1F5] transition-colors flex items-center gap-1 text-[#16D1F5] cursor-pointer"
               >
-                <Sparkles size={12} />
-                <span>Presentación Privada</span>
+                <Calculator size={13} />
+                <span>Calculadora ROI</span>
               </button>
             )}
-            <a href="#terminos" className="hover:text-[#16D1F5] transition-colors">
-              Términos de servicio
+            <a href="#paquetes" className="hover:text-[#16D1F5] transition-colors">
+              Paquetes de Inversión
             </a>
-            <a href="#privacidad" className="hover:text-[#16D1F5] transition-colors">
-              Política de privacidad
+            <a href="#como-funciona" className="hover:text-[#16D1F5] transition-colors">
+              Cómo Funciona
+            </a>
+            <a href="#faq" className="hover:text-[#16D1F5] transition-colors">
+              Preguntas Frecuentes
             </a>
           </div>
         </div>
 
         {/* Legal Disclaimer & Copyright */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-[#FFF9F2]/50 text-center md:text-left">
-          <p>© 2026 Negoxia Autopilot. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} Negoxia Autopilot. Todos los derechos reservados.</p>
           <p className="max-w-xl">
-            Negoxia Autopilot integra modelos de IA de última generación. Los resultados de los casos mostrados son reales pero dependen de la calidad de tu oferta, mercado, presupuesto publicitario y cierre de ventas.
+            Negoxia Autopilot es una solución de infraestructura comercial para agentes y agencias de seguros. Las proyecciones mostradas se basan en supuestos operativos del agente. No se garantizan comisiones fijas ni rendimientos sin el cierre efectivo de las pólizas.
           </p>
         </div>
       </div>
