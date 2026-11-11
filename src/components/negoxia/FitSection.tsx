@@ -12,7 +12,7 @@ export const FitSection: React.FC = () => {
   const isNotForYou = [
     'No tienes licencia para vender seguros ni una compañía/broker respaldando tus pólizas.',
     'Esperas que las pólizas se vendan solas o que los agentes se firmen sin presentarte a las llamadas agendadas.',
-    'Buscas "clones de IA" o avatares generados por computadora (nosotros no hacemos clones de IA; construimos infraestructura real de automatización, embudos de venta y reclutamiento humano).',
+    'No tienes interés en atender llamadas ni en dar seguimiento a los prospectos precalificados que ingresen a tu calendario.',
     'No tienes disposición para invertir en tu negocio ni en la publicidad de tus propias campañas.',
   ];
 

@@ -79,7 +79,7 @@ export const PricingPackages: React.FC = () => {
                   <Check size={14} className="stroke-[3]" />
                 </div>
                 <div>
-                  <h5 className="text-sm font-bold text-[#060E32]">Clonación de embudos y calendarios</h5>
+                  <h5 className="text-sm font-bold text-[#060E32]">Implementación de embudos y calendarios</h5>
                   <p className="text-xs text-[#556080] mt-0.5">
                     Embudos de alta conversión para venta de IUL y reclutamiento de agentes con calendarios sincronizados.
                   </p>
