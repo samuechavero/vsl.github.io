@@ -1,11 +1,9 @@
 import React from 'react';
-import { Check, ArrowRight, Sparkles, Shield, Zap, Layers, Headphones, Megaphone } from 'lucide-react';
+import { Check, ArrowRight, Sparkles, Shield, Headphones } from 'lucide-react';
 
-interface PricingPackagesProps {
-  onOpenBooking: () => void;
-}
+const CALENDLY_URL = 'https://calendly.com/vitalshieldinsurance';
 
-export const PricingPackages: React.FC<PricingPackagesProps> = ({ onOpenBooking }) => {
+export const PricingPackages: React.FC = () => {
   return (
     <section id="paquetes" className="py-16 sm:py-24 px-4 sm:px-6 bg-[#FFF9F2] relative">
       <div className="max-w-4xl mx-auto">
@@ -20,7 +18,7 @@ export const PricingPackages: React.FC<PricingPackagesProps> = ({ onOpenBooking 
             <span className="text-gradient-blue">Toda la máquina activa.</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#4B5578] leading-relaxed">
-            Sin tarifas sorpresa, sin configuraciones complejas y con el presupuesto publicitario ya contemplado.
+            Sin tarifas sorpresa, sin configuraciones complejas y con el presupuesto publicitario ya contemplado para impulsar tus ventas y tu equipo.
           </p>
         </div>
 
@@ -35,10 +33,10 @@ export const PricingPackages: React.FC<PricingPackagesProps> = ({ onOpenBooking 
                 Plan Completo · Plug & Play
               </span>
               <h3 className="text-2xl sm:text-4xl font-extrabold text-[#060E32] tracking-tight">
-                Ecosistema CRM y Automatización
+                Ecosistema de Automatización
               </h3>
               <p className="text-sm text-[#556080] mt-1.5 max-w-lg">
-                La solución definitiva para agentes de seguros de vida que buscan delegar la tecnología y llenar su agenda semanalmente.
+                La solución definitiva para agentes de seguros de vida que buscan delegar la tecnología y llenar su agenda con citas precalificadas de venta y reclutamiento.
               </p>
             </div>
 
@@ -69,7 +67,7 @@ export const PricingPackages: React.FC<PricingPackagesProps> = ({ onOpenBooking 
                   <Check size={14} className="stroke-[3]" />
                 </div>
                 <div>
-                  <h5 className="text-sm font-bold text-[#060E32]">Subcuenta de CRM a tu nombre</h5>
+                  <h5 className="text-sm font-bold text-[#060E32]">Subcuenta de plataforma de gestión a tu nombre</h5>
                   <p className="text-xs text-[#556080] mt-0.5">
                     Propiedad total de tus datos, contactos y pipelines de venta sin intermediarios.
                   </p>
@@ -83,7 +81,7 @@ export const PricingPackages: React.FC<PricingPackagesProps> = ({ onOpenBooking 
                 <div>
                   <h5 className="text-sm font-bold text-[#060E32]">Clonación de embudos y calendarios</h5>
                   <p className="text-xs text-[#556080] mt-0.5">
-                    Páginas de alta conversión para seguros y calendarios sincronizados listos para agendar.
+                    Embudos de alta conversión para venta de IUL y reclutamiento de agentes con calendarios sincronizados.
                   </p>
                 </div>
               </div>
@@ -93,7 +91,7 @@ export const PricingPackages: React.FC<PricingPackagesProps> = ({ onOpenBooking 
                   <Check size={14} className="stroke-[3]" />
                 </div>
                 <div>
-                  <h5 className="text-sm font-bold text-[#060E32]">Llamadas y SMS con números exclusivos</h5>
+                  <h5 className="text-sm font-bold text-[#060E32]">Integración para llamadas y SMS con números exclusivos</h5>
                   <p className="text-xs text-[#556080] mt-0.5">
                     Telefonía integrada para contactar a tus prospectos al instante con tu número local propio.
                   </p>
@@ -127,20 +125,22 @@ export const PricingPackages: React.FC<PricingPackagesProps> = ({ onOpenBooking 
             </div>
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button con "Quiero atención prioritaria" a Calendly */}
           <div className="pt-6 border-t border-[#EDE3D5] flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2 text-xs text-[#556080]">
               <Shield size={16} className="text-[#1258FA]" />
               <span>Sin contratos forzosos · Cancela cuando lo desees</span>
             </div>
 
-            <button
-              onClick={onOpenBooking}
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noreferrer"
               className="btn-primary w-full sm:w-auto px-8 py-4 text-base font-bold flex items-center justify-center gap-2 shadow-xl cursor-pointer"
             >
-              <span>Construir mi Máquina de Ventas</span>
+              <span>Quiero atención prioritaria</span>
               <ArrowRight size={18} />
-            </button>
+            </a>
           </div>
         </div>
       </div>

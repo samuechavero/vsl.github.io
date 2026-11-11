@@ -1,48 +1,37 @@
 import React from 'react';
-import {
-  Layers,
-  PhoneCall,
-  CalendarCheck,
-  Megaphone,
-  ArrowRight,
-  ShieldCheck,
-  CheckCircle2,
-  Sparkles,
-} from 'lucide-react';
+import { Layers, PhoneCall, CalendarCheck, Megaphone, ArrowRight, ShieldCheck, CheckCircle2, Sparkles } from 'lucide-react';
 
-interface HowItWorksProps {
-  onOpenBooking: () => void;
-}
+const CALENDLY_URL = 'https://calendly.com/vitalshieldinsurance';
 
-export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenBooking }) => {
+export const HowItWorks: React.FC = () => {
   const steps = [
     {
       icon: Layers,
       num: '01',
-      title: 'Configuración de tu Subcuenta GoHighLevel',
+      title: 'Configuración de tu Plataforma de Gestión',
       badge: 'Día 1 a 3',
-      desc: 'Habilitamos tu subcuenta oficial a tu nombre y clonamos nuestro Snapshot exclusivo para seguros de vida: embudos de alta conversión, formularios de calificación y pipelines organizados.',
+      desc: 'Habilitamos tu subcuenta oficial a tu nombre y configuramos nuestro sistema probado para seguros de vida: embudos de alta conversión para venta de IUL y embudos especializados de atracción y contratación de nuevos agentes.',
     },
     {
       icon: PhoneCall,
       num: '02',
-      title: 'Integración Twilio & LC Phone Exclusiva',
+      title: 'Integración Telefónica con Número Exclusivo',
       badge: 'Día 4 a 5',
-      desc: 'Configuramos tus números telefónicos locales para llamadas y SMS automáticos. Cada vez que entra un lead, el sistema le envía un mensaje instantáneo para confirmar su interés.',
+      desc: 'Configuramos tus números telefónicos locales para llamadas y SMS automáticos. Cada vez que entra un prospecto de póliza o candidato a agente, el sistema le responde en segundos para confirmar su interés.',
     },
     {
       icon: Megaphone,
       num: '03',
       title: 'Lanzamiento de Tráfico en Meta Ads',
       badge: 'Día 6 a 7',
-      desc: 'Configuramos tus campañas dirigidas a personas interesadas en retiro e IUL en tu zona. Incluye tus $200 USD mensuales de presupuesto publicitario y optimización semanal.',
+      desc: 'Activamos tus campañas publicitarias con presupuesto publicitario incluido, segmentadas con precisión para familias interesadas en retiro/protección y para profesionales interesados en ingresar a tu agencia.',
     },
     {
       icon: CalendarCheck,
       num: '04',
-      title: 'Citas Calificadas en tu Calendario',
+      title: 'Citas Precalificadas en tu Calendario',
       badge: 'Semana 2 en adelante',
-      desc: 'Tu calendario de Google o Outlook se llena de citas con prospectos que ya conocen tu oferta y pasaron el filtro. Tú solo te conectas a la llamada para presentar y cerrar.',
+      desc: 'Tu calendario se llena de citas con prospectos y candidatos que ya pasaron el filtro de calificación. Tú solo te conectas a la llamada para presentar la póliza o realizar la entrevista de incorporación.',
     },
   ];
 
@@ -60,7 +49,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenBooking }) => {
             <span className="text-gradient-blue">menos de 7 días</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#4B5578] leading-relaxed">
-            Nosotros nos encargamos de todo el ensamblaje técnico. Tú no tienes que aprender programación ni pelear con herramientas complejas.
+            Nosotros nos encargamos de todo el ensamblaje técnico y la pauta publicitaria. Tú no tienes que aprender programación ni pelear con herramientas complejas.
           </p>
         </div>
 
@@ -120,13 +109,15 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenBooking }) => {
             </div>
           </div>
 
-          <button
-            onClick={onOpenBooking}
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noreferrer"
             className="btn-primary w-full sm:w-auto px-7 py-3.5 text-sm font-bold flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer shadow-lg"
           >
-            <span>Agendar Diagnóstico Gratuito</span>
+            <span>Quiero atención prioritaria</span>
             <ArrowRight size={16} />
-          </button>
+          </a>
         </div>
       </div>
     </section>

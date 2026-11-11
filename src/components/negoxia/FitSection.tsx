@@ -1,18 +1,18 @@
 import React from 'react';
-import { Check, X, ShieldAlert, Sparkles, UserCheck } from 'lucide-react';
+import { Check, X, UserCheck } from 'lucide-react';
 
 export const FitSection: React.FC = () => {
   const isForYou = [
-    'Eres agente de seguros de vida con licencia activa (IUL, vida entera, gastos finales) y buscas un flujo predecible de citas semanales.',
-    'Estás cansado de la prospección en frío, de molestar a conocidos y de comprar leads compartidos de baja calidad.',
-    'Entiendes que GoHighLevel es el estándar de la industria y quieres una subcuenta oficial con embudos probados ya instalados.',
-    'Deseas delegar la configuración técnica y la pauta publicitaria en Meta Ads para enfocarte exclusivamente en tus presentaciones y cierres.',
+    'Eres agente o dueño de agencia de seguros de vida (IUL, vida entera, gastos finales) y buscas un flujo predecible de citas de venta y de reclutamiento.',
+    'Estás cansado de la prospección en frío, de agotar a tus conocidos y de comprar leads compartidos de baja calidad.',
+    'Deseas una plataforma de gestión comercial propia con embudos probados de pólizas y contratación listos para operar.',
+    'Quieres delegar la configuración técnica y la pauta publicitaria en Meta Ads para enfocarte exclusivamente en tus presentaciones de cierre y entrevistas de equipo.',
   ];
 
   const isNotForYou = [
     'No tienes licencia para vender seguros ni una compañía/broker respaldando tus pólizas.',
-    'Esperas que las pólizas se vendan solas sin presentarte a las citas agendadas.',
-    'Buscas "clones de IA" o avatares generados por computadora (nosotros no hacemos clones de IA; construimos infraestructura real de CRM, automatizaciones y embudos de captación humana).',
+    'Esperas que las pólizas se vendan solas o que los agentes se firmen sin presentarte a las llamadas agendadas.',
+    'Buscas "clones de IA" o avatares generados por computadora (nosotros no hacemos clones de IA; construimos infraestructura real de automatización, embudos de venta y reclutamiento humano).',
     'No tienes disposición para invertir en tu negocio ni en la publicidad de tus propias campañas.',
   ];
 
@@ -28,7 +28,7 @@ export const FitSection: React.FC = () => {
             ¿Es Negoxia Autopilot el socio ideal para tu agencia?
           </h2>
           <p className="mt-4 text-base text-[#4B5578] leading-relaxed">
-            Trabajamos con agentes comprometidos a escalar su producción mediante sistemas automatizados y profesionales.
+            Trabajamos con profesionales comprometidos a escalar su producción personal y su equipo mediante sistemas automatizados y profesionales.
           </p>
         </div>
 

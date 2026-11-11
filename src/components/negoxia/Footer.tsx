@@ -2,11 +2,11 @@ import React from 'react';
 import { Calculator } from 'lucide-react';
 
 interface FooterProps {
-  onOpenBooking: () => void;
+  onOpenBooking?: () => void;
   onScrollToCalculator?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onScrollToCalculator }) => {
+export const Footer: React.FC<FooterProps> = ({ onScrollToCalculator }) => {
   return (
     <footer className="bg-[#04081E] text-[#FFF9F2] pt-14 pb-12 px-4 sm:px-6 border-t border-white/10">
       <div className="max-w-6xl mx-auto">
@@ -19,18 +19,20 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onScrollToCalcula
               className="h-10 w-auto object-contain rounded"
             />
             <p className="text-xs text-[#FFF9F2]/70 text-center md:text-left max-w-sm mt-1">
-              Tu Ecosistema CRM y Automatización 100% "Plug & Play" para agentes de seguros de vida. Embudos, calendarios y publicidad gestionada en Meta Ads.
+              Tu Ecosistema de Automatización 100% "Plug & Play" para agentes de seguros de vida. Embudos, calendarios y publicidad gestionada en Meta Ads.
             </p>
           </div>
 
           {/* Nav / Links */}
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-[#FFF9F2]/80 font-medium">
-            <button
-              onClick={onOpenBooking}
-              className="hover:text-[#16D1F5] transition-colors cursor-pointer"
+            <a
+              href="https://calendly.com/vitalshieldinsurance"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-[#16D1F5] text-[#16D1F5] font-bold transition-colors cursor-pointer"
             >
-              Construir Máquina de Ventas
-            </button>
+              Quiero atención prioritaria
+            </a>
             {onScrollToCalculator && (
               <button
                 onClick={onScrollToCalculator}

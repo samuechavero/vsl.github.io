@@ -6,28 +6,28 @@ export const FaqSection: React.FC = () => {
 
   const faqs = [
     {
-      q: '¿Qué es exactamente la subcuenta de GoHighLevel y el Snapshot?',
-      a: 'GoHighLevel es el software de gestión comercial líder a nivel mundial. Nosotros te creamos una subcuenta oficial 100% a tu nombre (eres dueño de tus datos) y clonamos nuestro "Snapshot" exclusivo para agentes de seguros: embudos prediseñados de IUL y retiro, formularios de calificación, calendarios y secuencias automáticas que han generado millones de dólares en primas.',
+      q: '¿Qué es exactamente la subcuenta de plataforma de gestión?',
+      a: 'Nosotros te entregamos una subcuenta oficial 100% a tu nombre donde eres dueño absoluto de tus datos y contactos. En ella dejamos instalados nuestros embudos probados para venta de IUL y pólizas, así como embudos de atracción para nuevos agentes, calendarios sincronizados y secuencias automáticas de seguimiento.',
     },
     {
-      q: '¿Cómo funcionan los $200 USD de publicidad incluidos en el Paquete 1?',
-      a: 'A diferencia de otras agencias o plataformas que solo te cobran por el software, en tu mensualidad de $769 USD (para internos) o $1,169 USD (para externos) ya vienen incluidos $200 USD destinados directamente a tus campañas publicitarias para inyectar prospectos nuevos a tu embudo desde el primer mes.',
+      q: '¿Cómo funciona el presupuesto publicitario incluido?',
+      a: 'A diferencia de otras agencias que te cobran honorarios elevados y luego te piden dinero extra para comenzar a pautar, en tu inversión mensual de $769 USD ya viene contemplado el presupuesto publicitario necesario para mantener tus campañas activas e inyectar prospectos precalificados a tu calendario de manera continua.',
     },
     {
-      q: '¿Por qué es indispensable la integración Twilio / LC Phone con número exclusivo?',
-      a: 'La velocidad de respuesta es el factor #1 para cerrar pólizas. Al conectar tu propio número exclusivo mediante Twilio / LC Phone, el sistema responde en segundos por SMS y WhatsApp a cada persona que llena el formulario, programando recordatorios automáticos para que asistan a la cita sin que tengas que mandar un solo mensaje a mano.',
+      q: '¿El sistema sirve tanto para vender pólizas como para reclutar agentes?',
+      a: 'Sí, exactamente. El ecosistema está diseñado con dos motores activos: embudos y campañas publicitarias enfocadas en atraer familias interesadas en IUL / seguros de vida, y embudos en paralelo diseñados para atraer profesionales que desean unirse a tu equipo como agentes bajo tu liderazgo.',
     },
     {
-      q: '¿Cuál es la diferencia entre el Paquete 1 y el Paquete 2 (Publicidad Propia)?',
-      a: 'El Paquete 1 te entrega toda la infraestructura tecnológica (CRM, Snapshot, Twilio, soporte y $200 de ads). El Paquete 2 (+ $800 USD/mes) añade la gestión publicitaria experta en Meta Ads realizada por nuestro equipo, junto con regalos exclusivos al 100%: creación de tu historia / eBook, diseño de tu Landing Page y producción continua de creativos y videos para anuncios.',
+      q: '¿Por qué es indispensable la telefonía con número exclusivo?',
+      a: 'La rapidez de contacto marca la diferencia entre cerrar un cliente o perderlo. Al integrar un número telefónico exclusivo a tu nombre, el sistema envía mensajes instantáneos por SMS y WhatsApp a cada persona que llena el formulario, enviando confirmaciones y recordatorios automáticos para asegurar que asistan a la cita.',
     },
     {
       q: '¿Cuánto tiempo tarda la instalación completa?',
-      a: 'Una vez completado el formulario de bienvenida y la llamada inicial de diagnóstico, nuestro equipo técnico tarda entre 5 a 7 días hábiles en tener tu subcuenta, embudo, telefonía y campañas 100% activas y operando.',
+      a: 'Una vez completado el formulario inicial de bienvenida y tu sesión de diagnóstico, nuestro equipo técnico tarda entre 5 a 7 días hábiles en tener tu plataforma, embudos, telefonía y campañas de pauta 100% activas y operando.',
     },
     {
       q: '¿Tengo que firmar algún contrato de permanencia forzosa?',
-      a: 'No. No creemos en retener a nadie con contratos abusivos. Tu suscripción es mensual y puedes cancelarla en cualquier momento avisando con 15 días de anticipación. Además, la subcuenta y los prospectos generados son siempre de tu propiedad.',
+      a: 'No. Creemos en relaciones comerciales basadas en resultados. Tu suscripción es mensual y puedes cancelarla en cualquier momento. La subcuenta, tus prospectos y tus agentes son siempre de tu propiedad.',
     },
   ];
 
@@ -43,7 +43,7 @@ export const FaqSection: React.FC = () => {
             Todo claro desde el primer día
           </h2>
           <p className="mt-3 text-base text-[#4B5578]">
-            Respuestas directas para que tomes una decisión informada para tu agencia.
+            Respuestas directas y transparentes para que tomes la mejor decisión para tu negocio.
           </p>
         </div>
 

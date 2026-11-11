@@ -1,11 +1,9 @@
 import React from 'react';
 import { Download, ArrowRight, BookOpen, Sparkles, CheckCircle2 } from 'lucide-react';
 
-interface EbookSectionProps {
-  onOpenBooking: () => void;
-}
+const CALENDLY_URL = 'https://calendly.com/vitalshieldinsurance';
 
-export const EbookSection: React.FC<EbookSectionProps> = ({ onOpenBooking }) => {
+export const EbookSection: React.FC = () => {
   return (
     <section id="ebook" className="py-16 sm:py-24 px-4 sm:px-6 bg-[#060E32] text-white relative overflow-hidden">
       {/* Background Glows */}
@@ -66,36 +64,38 @@ export const EbookSection: React.FC<EbookSectionProps> = ({ onOpenBooking }) => 
             <div className="space-y-3 mb-8 text-left max-w-lg mx-auto lg:mx-0">
               <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#FFF9F2]/90">
                 <CheckCircle2 size={16} className="text-[#16D1F5] shrink-0" />
-                <span>Posicionamiento de autoridad ante tus clientes potenciales</span>
+                <span>Posicionamiento inmediato de autoridad ante clientes y futuros agentes</span>
               </div>
               <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#FFF9F2]/90">
                 <CheckCircle2 size={16} className="text-[#16D1F5] shrink-0" />
-                <span>El imán de prospectos perfecto para tus campañas de pauta</span>
+                <span>El imán de prospectos perfecto para tus campañas de pauta publicitaria</span>
               </div>
               <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#FFF9F2]/90">
                 <CheckCircle2 size={16} className="text-[#16D1F5] shrink-0" />
-                <span>Descarga digital inmediata en formato PDF</span>
+                <span>Descarga digital gratuita en formato PDF</span>
               </div>
             </div>
 
-            {/* CTAs */}
+            {/* CTAs con "Quiero atención prioritaria" */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
                 href="./el-vendedor-invisible.pdf"
                 download
-                className="btn-primary px-8 py-4 text-base font-bold flex items-center justify-center gap-2 shadow-xl"
+                className="btn-secondary px-7 py-4 text-sm sm:text-base font-semibold flex items-center justify-center gap-2 bg-white/10 text-white border-white/20 hover:bg-white/20 hover:text-white"
               >
                 <Download size={18} />
                 <span>Descargar E-book Gratis</span>
               </a>
 
-              <button
-                onClick={onOpenBooking}
-                className="btn-secondary px-7 py-4 text-sm sm:text-base font-semibold flex items-center justify-center gap-2 cursor-pointer bg-white/10 text-white border-white/20 hover:bg-white/20 hover:text-white"
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary px-8 py-4 text-base font-bold flex items-center justify-center gap-2 shadow-xl"
               >
-                <span>Agendar mi Diagnóstico</span>
-                <ArrowRight size={16} />
-              </button>
+                <span>Quiero atención prioritaria</span>
+                <ArrowRight size={18} />
+              </a>
             </div>
           </div>
         </div>

@@ -1,12 +1,13 @@
 import React, { useRef, useState } from 'react';
-import { Volume2, VolumeX, Play, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Volume2, Play, CheckCircle2, ArrowRight } from 'lucide-react';
+
+const CALENDLY_URL = 'https://calendly.com/vitalshieldinsurance';
 
 interface HeroProps {
-  onOpenBooking: () => void;
   unlocked: boolean;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenBooking, unlocked }) => {
+export const Hero: React.FC<HeroProps> = ({ unlocked }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hasInteracted, setHasInteracted] = useState(false);
 
@@ -19,7 +20,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, unlocked }) => {
   };
 
   return (
-    <section className="relative pt-10 sm:pt-16 pb-16 sm:pb-24 px-4 sm:px-6 overflow-hidden">
+    <section className="relative pt-10 sm:pt-16 pb-14 sm:pb-20 px-4 sm:px-6 overflow-hidden">
       {/* Soft Ambient Background Light */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[480px] bg-gradient-to-b from-[#1258FA]/12 via-[#16D1F5]/8 to-transparent blur-3xl -z-10 pointer-events-none" />
 
@@ -27,23 +28,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, unlocked }) => {
         {/* Eyebrow Pill */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1258FA]/8 border border-[#1258FA]/20 text-[#1258FA] text-xs sm:text-sm font-semibold tracking-tight mb-6">
           <span className="w-2 h-2 rounded-full bg-[#1258FA] pulse-glow" />
-          <span>Acceso Desbloqueado · Presentación Privada</span>
+          <span>Ecosistema de Automatización · Ventas de IUL & Reclutamiento de Agentes</span>
         </div>
 
-        {/* H1 Main Headline - Texto exacto */}
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#060E32] tracking-tight leading-[1.12] mb-6 max-w-4xl mx-auto">
+        {/* H1 Main Headline - Sin promesas numéricas ni frecuencias específicas */}
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#060E32] tracking-tight leading-[1.14] mb-6 max-w-4xl mx-auto">
           Cómo los Agentes de Seguros de Vida del{' '}
           <span className="text-gradient-blue">1%</span> consiguen{' '}
-          <span className="text-gradient-blue">10 citas semanales</span> sin comprar leads compartidos ni rogar por referidos.
+          <span className="text-gradient-blue">citas precalificadas</span> de manera predecible sin comprar leads compartidos ni rogar por referidos.
         </h1>
 
-        {/* Subtitle - Texto exacto */}
-        <h2 className="text-base sm:text-xl text-[#4B5578] font-normal max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-12">
-          Construimos tu ecosistema de adquisición y nuestro equipo de agendadores llena tu calendario de manera predecible con prospectos precalificados.
+        {/* Subtitle - Enfocado en Ventas + Reclutamiento */}
+        <h2 className="text-base sm:text-xl text-[#4B5578] font-normal max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-10">
+          Construimos tu ecosistema de adquisición y nuestro equipo de agendadores llena tu calendario de manera predecible con prospectos precalificados para venta de pólizas (IUL, Gastos Finales) y para la expansión de tu equipo de agentes.
         </h2>
 
-        {/* Video de Ventas (VSL) Inmediatamente Debajo */}
-        <div className="max-w-4xl mx-auto">
+        {/* Video de Ventas (VSL) Inmediatamente Debajo del Texto */}
+        <div className="max-w-4xl mx-auto mb-8">
           <div className="clean-card p-2 sm:p-3 bg-white/95 backdrop-blur shadow-2xl relative group border-2 border-[#1258FA]/20">
             <div className="relative w-full rounded-2xl overflow-hidden bg-[#060E32]" style={{ paddingTop: '56.25%' }}>
               <video
@@ -75,18 +76,22 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, unlocked }) => {
               )}
             </div>
 
-            {/* Bottom Details */}
-            <div className="mt-3 px-3 py-2 flex flex-col sm:flex-row items-center justify-between text-xs text-[#556080] gap-2 border-t border-[#EDE3D5]/60">
+            {/* Bottom Details with CTA */}
+            <div className="mt-4 px-3 py-3 flex flex-col sm:flex-row items-center justify-between text-xs text-[#556080] gap-3 border-t border-[#EDE3D5]/60">
               <span className="font-semibold text-[#060E32] flex items-center gap-1.5">
                 <CheckCircle2 size={15} className="text-[#1258FA]" />
-                <span>Ecosistema de adquisición llave en mano</span>
+                <span>Ecosistema de adquisición dual: Ventas + Reclutamiento</span>
               </span>
-              <button
-                onClick={onOpenBooking}
-                className="text-[#1258FA] font-bold hover:underline cursor-pointer"
+
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary px-5 py-2.5 text-xs sm:text-sm font-bold flex items-center gap-2 cursor-pointer shadow-md"
               >
-                ¿Quieres este sistema para tu agencia? Agendar diagnóstico →
-              </button>
+                <span>Quiero atención prioritaria</span>
+                <ArrowRight size={15} />
+              </a>
             </div>
           </div>
         </div>

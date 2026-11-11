@@ -6,17 +6,17 @@ export const Problem: React.FC = () => {
     {
       icon: UserX,
       title: 'El desgaste del "mercado tibio"',
-      desc: 'Rogar por referidos a amigos y familiares se agota en pocas semanas. Quedas atrapado en la incertidumbre de no saber de dónde saldrá tu próxima comisión.',
+      desc: 'Rogar por referidos a amigos y familiares se agota rápidamente, tanto para vender pólizas como para intentar reclutar agentes. Quedas atrapado en la incertidumbre de no saber de dónde saldrá tu próximo ingreso.',
     },
     {
       icon: PhoneMissed,
       title: 'Leads compartidos que queman tu dinero',
-      desc: 'Plataformas que le venden el mismo contacto a 5 agentes a la vez. Cuando llamas, la persona está enojada o ya firmó con otra compañía.',
+      desc: 'Plataformas que le venden el mismo contacto a 5 agentes a la vez. Cuando llamas, la persona está molesta o ya firmó con otra compañía, haciéndote perder tiempo y motivación.',
     },
     {
       icon: Shuffle,
-      title: 'Laberinto técnico y citas perdidas',
-      desc: 'Zapier roto, calendarios que no sincronizan, mensajes que no salen a tiempo. Pierdes horas tratando de ser programador en lugar de sentarte a cerrar pólizas.',
+      title: 'Desorden operativo y citas perdidas',
+      desc: 'Herramientas desconectadas, calendarios que no sincronizan y mensajes que no salen a tiempo. Pierdes horas intentando resolver la parte técnica en lugar de sentarte a presentar y cerrar.',
     },
   ];
 
@@ -30,11 +30,11 @@ export const Problem: React.FC = () => {
             <span>El verdadero obstáculo</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#060E32] tracking-tight">
-            ¿Por qué la mayoría de los agentes de seguros{' '}
+            ¿Por qué la mayoría de los agentes y agencias{' '}
             <span className="text-gradient-blue block mt-1">no logran predecibilidad?</span>
           </h2>
           <p className="mt-4 text-base text-[#4B5578] leading-relaxed">
-            No es tu talento comercial ni la calidad de tus pólizas de IUL o vida entera. Es la falta de una máquina automática que alimente tu calendario de prospectos precalificados todos los días.
+            No es tu talento comercial ni el valor de tus pólizas de IUL o gastos finales. Es la falta de una máquina automática que alimente tu calendario de citas precalificadas de venta y de reclutamiento de manera constante.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export const Problem: React.FC = () => {
           {problems.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <div key={idx} className="clean-card p-6 sm:p-8 flex flex-col justify-between">
+              <div key={idx} className="clean-card p-6 sm:p-8 flex flex-col justify-between bg-white">
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-[#1258FA]/10 flex items-center justify-center text-[#1258FA] mb-5">
                     <Icon size={24} />
@@ -70,11 +70,11 @@ export const Problem: React.FC = () => {
           <div className="relative z-10 max-w-3xl mx-auto">
             <Sparkles className="w-9 h-9 text-[#16D1F5] mx-auto mb-3" />
             <p className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-              Los Top Producers no prospectan en frío. <br />
+              Los Top Producers y las agencias líderes no prospectan en frío. <br />
               <span className="text-[#16D1F5]">Tienen una máquina de atracción que trabaja 24/7.</span>
             </p>
             <p className="mt-4 text-sm sm:text-base text-[#FFF9F2]/80 leading-relaxed max-w-2xl mx-auto">
-              Eso es exactamente <strong>Negoxia Autopilot</strong>: tu ecosistema CRM en GoHighLevel con embudos, nutrición inmediata por Twilio y publicidad gestionada en Meta Ads para que solo te dediques a cerrar.
+              Eso es exactamente <strong>Negoxia Autopilot</strong>: tu ecosistema de automatización con embudos de venta y reclutamiento, nutrición inmediata por telefonía propia y publicidad gestionada para llenar tu calendario de manera predecible.
             </p>
           </div>
         </div>

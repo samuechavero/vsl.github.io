@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/negoxia/Navbar';
 import { Hero } from './components/negoxia/Hero';
 import { GatedModal } from './components/negoxia/GatedModal';
-import { TopProducers } from './components/negoxia/TopProducers';
-import { RoiCalculator } from './components/negoxia/RoiCalculator';
-import { Problem } from './components/negoxia/Problem';
-import { HowItWorks } from './components/negoxia/HowItWorks';
-import { PricingPackages } from './components/negoxia/PricingPackages';
+import { ServicesFeatures } from './components/negoxia/ServicesFeatures';
 import { EbookSection } from './components/negoxia/EbookSection';
+import { RoiCalculator } from './components/negoxia/RoiCalculator';
+import { PricingPackages } from './components/negoxia/PricingPackages';
+import { TopProducers } from './components/negoxia/TopProducers';
+import { HowItWorks } from './components/negoxia/HowItWorks';
+import { Problem } from './components/negoxia/Problem';
 import { FitSection } from './components/negoxia/FitSection';
 import { FaqSection } from './components/negoxia/FaqSection';
 import { FinalCta } from './components/negoxia/FinalCta';
@@ -52,58 +53,48 @@ export default function App() {
       <div className={unlocked ? 'fade-in' : 'blur-bg select-none pointer-events-none'}>
         {/* Sticky Header */}
         <Navbar
-          onOpenBooking={handleOpenBooking}
           onScrollToCalculator={scrollToCalculator}
         />
 
         <main>
-          {/* 2. Hero Section con H1, Subtítulo y VSL Container */}
+          {/* SECCIÓN 1: Hero Section con H1, Subtítulo y VSL Container */}
           <Hero
-            onOpenBooking={handleOpenBooking}
             unlocked={unlocked}
           />
 
-          {/* Social Proof: Top Producers */}
+          {/* SECCIÓN 2: Características / Servicios (Motor Dual: Ventas IUL + Reclutamiento Agentes) */}
+          <ServicesFeatures />
+
+          {/* SECCIÓN 3: E-Book ("La Anatomía del Vendedor Invisible" - Ubicación estricta: 3ra sección) */}
+          <EbookSection />
+
+          {/* SECCIÓN 4: Calculadora Doble Interactiva de ROI (Tab 1: IUL Ventas | Tab 2: Reclutamiento) */}
+          <RoiCalculator />
+
+          {/* SECCIÓN 5: Paquete Único ($769 USD/mes, Presupuesto publicitario incluido) */}
+          <PricingPackages />
+
+          {/* SECCIÓN 6: Social Proof (Top Producers) */}
           <TopProducers />
 
-          {/* 3. Calculadora Interactiva de ROI (Sección Principal) */}
-          <RoiCalculator
-            onOpenBooking={handleOpenBooking}
-          />
+          {/* SECCIÓN 7: Cómo Funciona el Ecosistema */}
+          <HowItWorks />
 
-          {/* 4. El Problema del Agente */}
+          {/* SECCIÓN 8: El Problema del Agente */}
           <Problem />
 
-          {/* 5. Cómo Funciona el Ecosistema */}
-          <HowItWorks
-            onOpenBooking={handleOpenBooking}
-          />
-
-          {/* 6. Sección de Paquetes (Restricciones estrictas: $769/mes único, sin nombres de terceros, ads incluidos) */}
-          <PricingPackages
-            onOpenBooking={handleOpenBooking}
-          />
-
-          {/* 7. Sección del E-Book ("La Anatomía del Vendedor Invisible") */}
-          <EbookSection
-            onOpenBooking={handleOpenBooking}
-          />
-
-          {/* 8. Filtro de Afinidad (Sin clones de IA) */}
+          {/* SECCIÓN 9: Filtro de Afinidad */}
           <FitSection />
 
-          {/* 9. Preguntas Frecuentes */}
+          {/* SECCIÓN 10: Preguntas Frecuentes */}
           <FaqSection />
 
-          {/* 10. Final CTA */}
-          <FinalCta
-            onOpenBooking={handleOpenBooking}
-          />
+          {/* SECCIÓN 11: Final CTA */}
+          <FinalCta />
         </main>
 
         {/* Footer */}
         <Footer
-          onOpenBooking={handleOpenBooking}
           onScrollToCalculator={scrollToCalculator}
         />
       </div>
