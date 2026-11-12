@@ -1,146 +1,143 @@
 import React from 'react';
-import { Check, ArrowRight, Sparkles, Shield, Headphones } from 'lucide-react';
+import { Check, ArrowRight, ShieldCheck, Sparkles, Bot, PhoneCall, Megaphone, CalendarCheck, Zap, AlertTriangle } from 'lucide-react';
 
 const CALENDLY_URL = 'https://calendly.com/vitalshieldinsurance';
 
 export const PricingPackages: React.FC = () => {
+  const features = [
+    {
+      title: 'Subcuenta de CRM y Plataforma de Gestión',
+      desc: 'Acceso total a tu sistema oficial a tu nombre para gestionar candidatos, pipelines y llamadas de contratación.',
+    },
+    {
+      title: 'Agente Conversacional con IA 24/7',
+      desc: 'Atención automática y calificación en WhatsApp, Instagram y Messenger para aspirantes a agentes.',
+    },
+    {
+      title: 'Embudos de Alta Conversión para Reclutamiento',
+      desc: 'Páginas y flujos optimizados para atraer y filtrar profesionales interesados en unirse a tu agencia.',
+    },
+    {
+      title: 'Integración Telefónica con Número Exclusivo',
+      desc: 'Telefonía local dedicada para llamadas y SMS automáticos de confirmación instantánea a cada prospecto.',
+    },
+    {
+      title: 'Gestión de Campañas Publicitarias con Presupuesto Incluido',
+      desc: 'Presupuesto publicitario incluido para mantener campañas activas en Meta Ads atrayendo candidatos calificados.',
+    },
+    {
+      title: 'Sincronización de Calendarios y Recordatorios Anti-No-Show',
+      desc: 'Sincronización directa con Google y Outlook con secuencias previas y posteriores a la entrevista.',
+    },
+    {
+      title: 'Onboarding Personalizado y Capacitación 1 a 1',
+      desc: 'Acompañamiento en el lanzamiento y entrenamiento para dominar tu plataforma y cerrar más contratos.',
+    },
+    {
+      title: 'Soporte Técnico Continuo Anti-Fallas',
+      desc: 'Asistencia prioritaria para garantizar que tu infraestructura opere sin interrupciones los 365 días del año.',
+    },
+  ];
+
   return (
-    <section id="paquetes" className="py-16 sm:py-24 px-4 sm:px-6 bg-[#FFF9F2] relative">
-      <div className="max-w-4xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1258FA]/10 border border-[#1258FA]/20 text-[#1258FA] text-xs font-semibold uppercase tracking-wider mb-4">
-            <Sparkles size={14} />
+    <section id="paquetes" className="py-16 sm:py-24 px-4 sm:px-6 bg-[#FFF9F2] relative overflow-hidden">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1258FA]/10 border border-[#1258FA]/20 text-[#1258FA] text-xs font-bold uppercase tracking-wider mb-4">
+            <Sparkles size={14} className="text-[#16D1F5]" />
             <span>Inversión Todo Incluido</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#060E32] tracking-tight leading-tight">
-            Un solo plan.{' '}
-            <span className="text-gradient-blue">Toda la máquina activa.</span>
+          <h2 className="text-3xl sm:text-5xl font-black text-[#060E32] tracking-tight">
+            Un Solo Paquete. <span className="text-gradient-blue">Todo lo que tu Agencia Necesita.</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#4B5578] leading-relaxed">
-            Sin tarifas sorpresa, sin configuraciones complejas y con el presupuesto publicitario ya contemplado para impulsar tus ventas y tu equipo.
+            Sin costos ocultos ni sorpresas técnicas. Desplegamos tu infraestructura de reclutamiento llave en mano.
           </p>
         </div>
 
-        {/* Pricing Card Principal */}
-        <div className="clean-card p-8 sm:p-12 relative overflow-hidden bg-white border-2 border-[#1258FA]/30 shadow-2xl">
-          {/* Top Decorative Gradient Line */}
-          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#1258FA] to-[#16D1F5]" />
-
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-8 border-b border-[#EDE3D5] gap-6">
-            <div>
-              <span className="px-3.5 py-1 rounded-full bg-[#1258FA]/10 text-[#1258FA] text-xs font-bold uppercase tracking-wider inline-block mb-3">
-                Plan Completo · Plug & Play
-              </span>
-              <h3 className="text-2xl sm:text-4xl font-extrabold text-[#060E32] tracking-tight">
-                Ecosistema de Automatización
-              </h3>
-              <p className="text-sm text-[#556080] mt-1.5 max-w-lg">
-                La solución definitiva para agentes de seguros de vida que buscan delegar la tecnología y llenar su agenda con citas precalificadas de venta y reclutamiento.
-              </p>
-            </div>
-
-            {/* Price Tag */}
-            <div className="p-6 rounded-2xl bg-[#FFF9F2] border border-[#EDE3D5] text-center md:text-right shrink-0 w-full md:w-auto">
-              <span className="text-xs uppercase tracking-widest text-[#556080] font-bold block mb-1">
-                Inversión Mensual
-              </span>
-              <div className="flex items-baseline justify-center md:justify-end gap-1.5">
-                <span className="text-4xl sm:text-5xl font-black text-[#060E32]">$769</span>
-                <span className="text-sm font-bold text-[#556080]">USD / mes</span>
-              </div>
-              <p className="text-xs font-semibold text-[#1258FA] mt-1">
-                Presupuesto publicitario incluido
-              </p>
-            </div>
+        {/* Pricing Card: Negoxia Pack Fast Start */}
+        <div className="relative rounded-3xl bg-white border-2 border-[#1258FA]/30 shadow-2xl p-7 sm:p-12 overflow-hidden">
+          {/* Top highlight ribbon */}
+          <div className="absolute top-0 right-0 bg-gradient-to-l from-[#1258FA] to-[#16D1F5] text-white text-[11px] font-black uppercase tracking-widest py-1.5 px-8 rounded-bl-2xl shadow-md">
+            MÁS POPULAR · ACCESO COMPLETO
           </div>
 
-          {/* Entregables List */}
-          <div className="py-8 space-y-4">
-            <h4 className="text-xs uppercase tracking-wider text-[#060E32] font-black mb-4">
-              Entregables del Ecosistema:
-            </h4>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl bg-[#FFF9F2] border border-[#EDE3D5] flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#1258FA]/15 flex items-center justify-center text-[#1258FA] shrink-0 mt-0.5">
-                  <Check size={14} className="stroke-[3]" />
-                </div>
-                <div>
-                  <h5 className="text-sm font-bold text-[#060E32]">Subcuenta de plataforma de gestión a tu nombre</h5>
-                  <p className="text-xs text-[#556080] mt-0.5">
-                    Propiedad total de tus datos, contactos y pipelines de venta sin intermediarios.
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-[#FFF9F2] border border-[#EDE3D5] flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#1258FA]/15 flex items-center justify-center text-[#1258FA] shrink-0 mt-0.5">
-                  <Check size={14} className="stroke-[3]" />
-                </div>
-                <div>
-                  <h5 className="text-sm font-bold text-[#060E32]">Implementación de embudos y calendarios</h5>
-                  <p className="text-xs text-[#556080] mt-0.5">
-                    Embudos de alta conversión para venta de IUL y reclutamiento de agentes con calendarios sincronizados.
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-[#FFF9F2] border border-[#EDE3D5] flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#1258FA]/15 flex items-center justify-center text-[#1258FA] shrink-0 mt-0.5">
-                  <Check size={14} className="stroke-[3]" />
-                </div>
-                <div>
-                  <h5 className="text-sm font-bold text-[#060E32]">Integración para llamadas y SMS con números exclusivos</h5>
-                  <p className="text-xs text-[#556080] mt-0.5">
-                    Telefonía integrada para contactar a tus prospectos al instante con tu número local propio.
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-[#FFF9F2] border border-[#EDE3D5] flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#1258FA]/15 flex items-center justify-center text-[#1258FA] shrink-0 mt-0.5">
-                  <Check size={14} className="stroke-[3]" />
-                </div>
-                <div>
-                  <h5 className="text-sm font-bold text-[#060E32]">Gestión de campañas publicitarias</h5>
-                  <p className="text-xs text-[#556080] mt-0.5">
-                    Campañas en Meta Ads con presupuesto publicitario incluido y optimización constante.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Banner Full-Width Soporte */}
-            <div className="p-4 rounded-xl bg-gradient-to-r from-[#060E32] to-[#0A1A5C] text-white flex items-center gap-3.5 shadow-md">
-              <div className="w-8 h-8 rounded-full bg-[#16D1F5]/20 flex items-center justify-center text-[#16D1F5] shrink-0">
-                <Headphones size={18} />
-              </div>
-              <div className="flex-1">
-                <h5 className="text-sm font-bold text-white">Soporte continuo anti-fallas</h5>
-                <p className="text-xs text-[#FFF9F2]/75">
-                  Acompañamiento técnico para que tu sistema nunca se detenga y tus citas lleguen sin interrupción.
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Left Column: Plan Info & Pricing */}
+            <div className="lg:col-span-5 flex flex-col justify-between h-full pr-0 lg:pr-6 border-b lg:border-b-0 lg:border-r border-[#EDE3D5] pb-8 lg:pb-0">
+              <div>
+                <span className="text-xs font-extrabold uppercase tracking-widest text-[#1258FA]">
+                  Plan Oficial de Expansión
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-black text-[#060E32] mt-1 mb-3">
+                  Negoxia Pack Fast Start
+                </h3>
+                <p className="text-xs sm:text-sm text-[#556080] leading-relaxed mb-6">
+                  La solución integral para líderes y agencias que desean reclutar de forma predecible sin perder tiempo en prospección manual.
                 </p>
+
+                {/* Price Display */}
+                <div className="p-5 rounded-2xl bg-[#FFF9F2] border border-[#EDE3D5] mb-6">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-4xl sm:text-5xl font-black text-[#060E32]">$789</span>
+                    <span className="text-xs sm:text-sm text-[#7380A0] font-semibold">USD / mes</span>
+                  </div>
+                  <div className="mt-2 inline-flex items-center gap-1.5 text-xs text-[#1258FA] font-bold">
+                    <Check size={14} className="stroke-[3]" />
+                    <span>Presupuesto publicitario incluido</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Button */}
+              <div>
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary w-full py-4 text-base font-bold flex items-center justify-center gap-2 shadow-xl hover:scale-[1.02] transition-transform cursor-pointer"
+                >
+                  <span>Quiero atención prioritaria</span>
+                  <ArrowRight size={18} />
+                </a>
+
+                {/* TÉRMINOS DE PAGO VISIBLES EXACTOS REQUERIDOS */}
+                <div className="mt-4 p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-900 text-xs font-bold flex items-center justify-center gap-2 text-center">
+                  <AlertTriangle size={15} className="text-amber-600 shrink-0" />
+                  <span>Contrato mínimo de 3 meses. Pagos no reembolsables.</span>
+                </div>
+
+                <div className="mt-3 flex items-center justify-center gap-1.5 text-[11px] text-[#8C96AB]">
+                  <ShieldCheck size={13} className="text-[#1258FA]" />
+                  <span>Configuración en 5-7 días hábiles · Soporte dedicado</span>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* CTA Button con "Quiero atención prioritaria" a Calendly */}
-          <div className="pt-6 border-t border-[#EDE3D5] flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2 text-xs text-[#556080]">
-              <Shield size={16} className="text-[#1258FA]" />
-              <span>Sin contratos forzosos · Cancela cuando lo desees</span>
+            {/* Right Column: Features List */}
+            <div className="lg:col-span-7">
+              <h4 className="text-xs font-black uppercase tracking-wider text-[#060E32] mb-4">
+                ¿Qué incluye el Negoxia Pack Fast Start?
+              </h4>
+              <div className="space-y-3.5">
+                {features.map((item, idx) => (
+                  <div key={idx} className="p-3.5 rounded-xl bg-[#FFF9F2] border border-[#EDE3D5]/80 flex items-start gap-3">
+                    <div className="w-5 h-5 rounded-full bg-[#1258FA]/15 flex items-center justify-center text-[#1258FA] shrink-0 mt-0.5">
+                      <Check size={13} className="stroke-[3]" />
+                    </div>
+                    <div>
+                      <h5 className="text-xs sm:text-sm font-extrabold text-[#060E32]">
+                        {item.title}
+                      </h5>
+                      <p className="text-[11px] sm:text-xs text-[#556080] mt-0.5 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-primary w-full sm:w-auto px-8 py-4 text-base font-bold flex items-center justify-center gap-2 shadow-xl cursor-pointer"
-            >
-              <span>Quiero atención prioritaria</span>
-              <ArrowRight size={18} />
-            </a>
           </div>
         </div>
       </div>

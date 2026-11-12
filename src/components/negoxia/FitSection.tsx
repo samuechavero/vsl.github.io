@@ -3,17 +3,17 @@ import { Check, X, UserCheck } from 'lucide-react';
 
 export const FitSection: React.FC = () => {
   const isForYou = [
-    'Eres agente o dueño de agencia de seguros de vida (IUL, vida entera, gastos finales) y buscas un flujo predecible de citas de venta y de reclutamiento.',
-    'Estás cansado de la prospección en frío, de agotar a tus conocidos y de comprar leads compartidos de baja calidad.',
-    'Deseas una plataforma de gestión comercial propia con embudos probados de pólizas y contratación listos para operar.',
-    'Quieres delegar la configuración técnica y la pauta publicitaria en Meta Ads para enfocarte exclusivamente en tus presentaciones de cierre y entrevistas de equipo.',
+    'Eres dueño de agencia, líder de equipo o agente con visión que busca reclutar e incorporar entre 5 y 20 nuevos agentes al mes de manera predecible.',
+    'Estás agotado de la prospección manual en redes sociales, de rogar por referidos o de depender de candidatos no calificados.',
+    'Deseas una plataforma de CRM y agentes de IA que califiquen a los prospectos 24/7 y sincronicen entrevistas directamente en tu calendario.',
+    'Quieres delegar la parte técnica y la publicidad para enfocarte exclusivamente en liderar, capacitar y firmar nuevos contratos para tu equipo.',
   ];
 
   const isNotForYou = [
-    'No tienes licencia para vender seguros ni una compañía/broker respaldando tus pólizas.',
-    'Esperas que las pólizas se vendan solas o que los agentes se firmen sin presentarte a las llamadas agendadas.',
+    'No tienes una agencia o equipo en marcha ni la intención de liderar y desarrollar a nuevos agentes.',
+    'Esperas que los nuevos agentes se incorporen y produzcan solos sin presentarte a las entrevistas agendadas.',
     'No tienes interés en atender llamadas ni en dar seguimiento a los prospectos precalificados que ingresen a tu calendario.',
-    'No tienes disposición para invertir en tu negocio ni en la publicidad de tus propias campañas.',
+    'No estás dispuesto a invertir en tecnología ni en la publicidad de crecimiento para expandir tu organización.',
   ];
 
   return (
@@ -25,10 +25,10 @@ export const FitSection: React.FC = () => {
             <span>Filtro de afinidad</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#060E32] tracking-tight">
-            ¿Es Negoxia Autopilot el socio ideal para tu agencia?
+            ¿Es Negoxia LLC el socio ideal para tu agencia?
           </h2>
           <p className="mt-4 text-base text-[#4B5578] leading-relaxed">
-            Trabajamos con profesionales comprometidos a escalar su producción personal y su equipo mediante sistemas automatizados y profesionales.
+            Trabajamos con líderes comprometidos a duplicar su equipo y escalar su organización mediante sistemas de Inteligencia Artificial y automatización comercial.
           </p>
         </div>
 

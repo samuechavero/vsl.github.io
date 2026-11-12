@@ -3,7 +3,7 @@ import { Award, Star } from 'lucide-react';
 
 interface TopProducer {
   name: string;
-  company: string;
+  role: string;
   image: string;
   initials: string;
 }
@@ -11,49 +11,49 @@ interface TopProducer {
 const PRODUCERS: TopProducer[] = [
   {
     name: 'Isidro Perez',
-    company: 'WFG (World Financial Group)',
+    role: 'Líder de Organización · Expansión Nacional',
     image: './isidroperez.JPG',
     initials: 'IP',
   },
   {
     name: 'Ana Cordones',
-    company: 'Curiman Brokers Group',
+    role: 'Directora de Agencia · Reclutamiento Activo',
     image: './anacordones.JPG',
     initials: 'AC',
   },
   {
     name: 'Patricia Bautista',
-    company: 'WFG (World Financial Group)',
+    role: 'Líder Regional · Constructora de Equipos',
     image: './patriciabautista.JPG',
     initials: 'PB',
   },
   {
     name: 'Angel Caridad',
-    company: 'National Life Group',
+    role: 'Director de Crecimiento · Agencia Asociada',
     image: './angelcaridad.JPG',
     initials: 'AC',
   },
   {
     name: 'Helen Jimenez',
-    company: 'WFG (World Financial Group)',
+    role: 'Líder de Equipo · Escalamiento de Agencia',
     image: './helenjimenez.JPG',
     initials: 'HJ',
   },
   {
     name: 'Juan C. Franco',
-    company: 'Solid Financial Plan',
+    role: 'Director de Expansión · Organización Líder',
     image: './juancfranco.JPG',
     initials: 'JF',
   },
   {
     name: 'Marisol Aguero',
-    company: 'Seguros con Marisol',
+    role: 'Líder de Agencia · Reclutamiento Continuo',
     image: './marisolaguero.JPG',
     initials: 'MA',
   },
   {
     name: 'David Reyes',
-    company: 'WFG (World Financial Group)',
+    role: 'Constructor de Organización · Red Nacional',
     image: './davidreyes.JPG',
     initials: 'DR',
   },
@@ -61,18 +61,19 @@ const PRODUCERS: TopProducer[] = [
 
 export const TopProducers: React.FC = () => {
   return (
-    <section className="py-16 sm:py-20 px-4 sm:px-6 bg-[#FFF9F2] border-t border-[#EDE3D5]">
+    <section id="casos-reales" className="py-16 sm:py-20 px-4 sm:px-6 bg-[#FFF9F2] border-t border-[#EDE3D5]">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1258FA]/10 text-[#1258FA] text-xs font-bold uppercase tracking-wider mb-3">
             <Award size={14} />
-            <span>Casos Reales en Seguros de Vida</span>
+            <span>Prueba Social & Liderazgo</span>
           </div>
-          <h3 className="text-2xl sm:text-4xl font-extrabold text-[#060E32] tracking-tight">
-            Agentes que confían en nuestra infraestructura
+          {/* Texto Exacto Requerido por Compliance */}
+          <h3 className="text-2xl sm:text-4xl font-black text-[#060E32] tracking-tight">
+            Agentes y clientes actuales reales de nuestra agencia
           </h3>
           <p className="mt-3 text-sm sm:text-base text-[#4B5578]">
-            Producen consistentemente en las principales compañías y agencias del mercado estadounidense.
+            Líderes y dueños de agencia que escalan su organización e incorporan talento nuevo cada semana utilizando nuestro ecosistema de automatización.
           </p>
         </div>
 
@@ -89,16 +90,15 @@ export const TopProducers: React.FC = () => {
                   alt={producer.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {
-                    // Fallback to initials if image path fails
                     (e.target as HTMLElement).style.display = 'none';
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060E32] via-[#060E32]/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#060E32] via-[#060E32]/35 to-transparent" />
 
                 {/* Star badge */}
-                <div className="absolute top-3 right-3 bg-[#060E32]/80 backdrop-blur-md px-2 py-1 rounded-full flex items-center gap-1 text-[10px] text-[#16D1F5] font-bold border border-white/10">
+                <div className="absolute top-3 right-3 bg-[#060E32]/85 backdrop-blur-md px-2 py-1 rounded-full flex items-center gap-1 text-[10px] text-[#16D1F5] font-bold border border-white/10">
                   <Star size={10} className="fill-[#16D1F5]" />
-                  <span>Top Producer</span>
+                  <span>Líder Activo</span>
                 </div>
 
                 {/* Content Overlay */}
@@ -106,8 +106,8 @@ export const TopProducers: React.FC = () => {
                   <h4 className="text-base font-bold text-white leading-tight">
                     {producer.name}
                   </h4>
-                  <p className="text-xs text-[#16D1F5] font-medium mt-0.5">
-                    {producer.company}
+                  <p className="text-xs text-[#16D1F5] font-medium mt-1 leading-snug">
+                    {producer.role}
                   </p>
                 </div>
               </div>

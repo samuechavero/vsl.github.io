@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Navbar } from './components/negoxia/Navbar';
 import { Hero } from './components/negoxia/Hero';
-import { GatedModal } from './components/negoxia/GatedModal';
 import { ServicesFeatures } from './components/negoxia/ServicesFeatures';
 import { EbookSection } from './components/negoxia/EbookSection';
 import { RoiCalculator } from './components/negoxia/RoiCalculator';
@@ -13,45 +12,36 @@ import { FitSection } from './components/negoxia/FitSection';
 import { FaqSection } from './components/negoxia/FaqSection';
 import { FinalCta } from './components/negoxia/FinalCta';
 import { Footer } from './components/negoxia/Footer';
-import { BookingModal } from './components/negoxia/BookingModal';
+import { WheelModal } from './components/negoxia/WheelModal';
+import { LegalModal } from './components/negoxia/LegalModals';
 import { FloatingEbookBadge } from './components/negoxia/FloatingEbookBadge';
 import { SocialProofToast } from './components/negoxia/SocialProofToast';
 
 export default function App() {
-  // 1. Acceso Bloqueado (Gated Content)
-  const [unlocked, setUnlocked] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('negoxia_unlocked') === 'true';
-    }
-    return false;
+  const [isWheelOpen, setIsWheelOpen] = useState(false);
+  const [legalModal, setLegalModal] = useState<{ isOpen: boolean; type: 'privacy' | 'terms' }>({
+    isOpen: false,
+    type: 'privacy',
   });
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
 
-  const handleUnlock = () => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('negoxia_unlocked', 'true');
-    }
-    setUnlocked(true);
+  const handleOpenWheel = () => {
+    setIsWheelOpen(true);
   };
 
-  // Bloqueo de scroll mientras el contenido esté bloqueado
-  useEffect(() => {
-    if (unlocked) {
-      document.body.style.overflow = '';
-    } else {
-      document.body.style.overflow = 'hidden';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [unlocked]);
-
-  const handleOpenBooking = () => {
-    setIsBookingOpen(true);
+  const handleCloseWheel = () => {
+    setIsWheelOpen(false);
   };
 
-  const handleCloseBooking = () => {
-    setIsBookingOpen(false);
+  const handleOpenPrivacy = () => {
+    setLegalModal({ isOpen: true, type: 'privacy' });
+  };
+
+  const handleOpenTerms = () => {
+    setLegalModal({ isOpen: true, type: 'terms' });
+  };
+
+  const handleCloseLegal = () => {
+    setLegalModal((prev) => ({ ...prev, isOpen: false }));
   };
 
   const scrollToCalculator = () => {
@@ -63,85 +53,67 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FFF9F2] text-[#060E32] flex flex-col font-sans selection:bg-[#1258FA] selection:text-white relative">
-      {/* Contenido Principal con desenfoque condicional si está bloqueado */}
-      <div className={unlocked ? 'fade-in' : 'blur-bg select-none pointer-events-none'}>
-        {/* Sticky Header */}
-        <Navbar
-          onScrollToCalculator={scrollToCalculator}
-        />
+      {/* Sticky Header */}
+      <Navbar onScrollToCalculator={scrollToCalculator} />
 
-        <main>
-          {/* SECCIÓN 1: Hero Section con H1, Subtítulo y VSL Container */}
-          <Hero
-            unlocked={unlocked}
-          />
+      <main>
+        {/* SECCIÓN 1: Hero Section con Video, Formulario con Correo y CTA de Ruleta */}
+        <Hero onOpenWheel={handleOpenWheel} />
 
-          {/* SECCIÓN 2: Características / Servicios (Motor Dual: Ventas IUL + Reclutamiento Agentes) */}
-          <ServicesFeatures />
+        {/* SECCIÓN 2: Soluciones Principales (3 Tarjetas Glassmorphism con IA) */}
+        <ServicesFeatures />
 
-          {/* SECCIÓN 3: E-Book ("La Anatomía del Vendedor Invisible" - Ubicación estricta: 3ra sección) */}
-          <EbookSection />
+        {/* SECCIÓN 3: E-Book ("La Anatomía del Vendedor Invisible") */}
+        <EbookSection />
 
-          {/* SECCIÓN 4: Calculadora Doble Interactiva de ROI (Tab 1: IUL Ventas | Tab 2: Reclutamiento) */}
-          <RoiCalculator />
+        {/* SECCIÓN 4: Calculadora de Escalado y Reclutamiento de Agencia */}
+        <RoiCalculator />
 
-          {/* SECCIÓN 5: Paquete Único ($769 USD/mes, Presupuesto publicitario incluido) */}
-          <PricingPackages />
+        {/* SECCIÓN 5: Paquete Negoxia Pack Fast Start ($789 USD y Contrato 3 meses) */}
+        <PricingPackages />
 
-          {/* SECCIÓN 6: Social Proof (Top Producers) */}
-          <TopProducers />
+        {/* SECCIÓN 6: Social Proof (Agentes y clientes actuales reales de nuestra agencia) */}
+        <TopProducers />
 
-          {/* SECCIÓN 7: Cómo Funciona el Ecosistema */}
-          <HowItWorks />
+        {/* SECCIÓN 7: Cómo Funciona (3 Pasos exactos) */}
+        <HowItWorks />
 
-          {/* SECCIÓN 8: El Problema del Agente */}
-          <Problem />
+        {/* SECCIÓN 8: El Obstáculo de Reclutamiento */}
+        <Problem />
 
-          {/* SECCIÓN 9: Filtro de Afinidad */}
-          <FitSection />
+        {/* SECCIÓN 9: Filtro de Afinidad para Agencias */}
+        <FitSection />
 
-          {/* SECCIÓN 10: Preguntas Frecuentes */}
-          <FaqSection />
+        {/* SECCIÓN 10: Preguntas Frecuentes */}
+        <FaqSection />
 
-          {/* SECCIÓN 11: Final CTA */}
-          <FinalCta />
-        </main>
+        {/* SECCIÓN 11: Final Call to Action */}
+        <FinalCta />
+      </main>
 
-        {/* Footer */}
-        <Footer
-          onScrollToCalculator={scrollToCalculator}
-        />
-
-      </div>
-
-      {/* 1. Modal de Acceso Bloqueado (Gated Content Overlay) */}
-      {!unlocked && (
-        <GatedModal
-          onUnlock={handleUnlock}
-        />
-      )}
-
-      {/* Elementos Flotantes de Conversión y Social Proof (z-50) */}
-      <FloatingEbookBadge
-        onScrollClick={() => {
-          if (!unlocked) {
-            handleUnlock();
-          }
-          setTimeout(() => {
-            const el = document.getElementById('ebook');
-            if (el) {
-              el.scrollIntoView({ behavior: 'smooth' });
-            }
-          }, 150);
-        }}
+      {/* Footer con Contactos, Enlaces Meta y Disclaimer USA exacto */}
+      <Footer
+        onScrollToCalculator={scrollToCalculator}
+        onOpenPrivacy={handleOpenPrivacy}
+        onOpenTerms={handleOpenTerms}
       />
+
+      {/* Pop-up de Ruleta (Gamificación con texto requerido) */}
+      <WheelModal
+        isOpen={isWheelOpen}
+        onClose={handleCloseWheel}
+      />
+
+      {/* Modales de Cumplimiento Meta (WhatsApp API Privacy & Terms) */}
+      <LegalModal
+        isOpen={legalModal.isOpen}
+        type={legalModal.type}
+        onClose={handleCloseLegal}
+      />
+
+      {/* Elementos Flotantes Fijos al Viewport (z-[9999]) */}
+      <FloatingEbookBadge />
       <SocialProofToast />
-
-      {/* Modal Secundario de Agendamiento desde los CTAs de la página */}
-      <BookingModal
-        isOpen={isBookingOpen}
-        onClose={handleCloseBooking}
-      />
     </div>
   );
 }
