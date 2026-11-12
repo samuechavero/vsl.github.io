@@ -89,13 +89,17 @@ export const RoiCalculator: React.FC = () => {
                     onChange={(e) => setPresupuestoMeta(Number(e.target.value))}
                     className="w-full h-2.5 bg-white/15 rounded-lg appearance-none cursor-pointer accent-[#16D1F5]"
                   />
-                  <input
-                    type="number"
-                    min="50"
-                    value={presupuestoMeta}
-                    onChange={(e) => setPresupuestoMeta(Math.max(10, Number(e.target.value)))}
-                    className="w-24 bg-[#091542] border border-white/20 rounded-xl px-2.5 py-1.5 text-xs sm:text-sm font-black text-white text-right focus:outline-none focus:border-[#16D1F5]"
-                  />
+                  <div className="relative flex items-center shrink-0">
+                    <DollarSign size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#16D1F5] pointer-events-none z-10" />
+                    <input
+                      type="number"
+                      min="50"
+                      value={presupuestoMeta}
+                      onChange={(e) => setPresupuestoMeta(Math.max(10, Number(e.target.value)))}
+                      className="w-28 bg-[#091542] border border-white/20 rounded-xl pr-3 py-1.5 text-xs sm:text-sm font-black text-white text-right focus:outline-none focus:border-[#16D1F5]"
+                      style={{ paddingLeft: '32px' }}
+                    />
+                  </div>
                 </div>
 
                 <div className="mt-2.5 flex items-center justify-between text-[11px] text-[#FFF9F2]/60 pt-2 border-t border-white/10">
@@ -141,12 +145,16 @@ export const RoiCalculator: React.FC = () => {
                   <label className="block text-xs font-bold text-white mb-1.5">
                     Producción Anual Promedio por Agente ($ USD)
                   </label>
-                  <input
-                    type="number"
-                    value={produccionAgente}
-                    onChange={(e) => setProduccionAgente(Math.max(0, Number(e.target.value)))}
-                    className="w-full bg-[#091542] border border-white/20 rounded-xl px-3.5 py-2 text-sm font-bold text-white focus:outline-none focus:border-[#16D1F5]"
-                  />
+                  <div className="relative">
+                    <DollarSign size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#16D1F5] pointer-events-none z-10" />
+                    <input
+                      type="number"
+                      value={produccionAgente}
+                      onChange={(e) => setProduccionAgente(Math.max(0, Number(e.target.value)))}
+                      className="w-full bg-[#091542] border border-white/20 rounded-xl py-3 pr-3.5 text-sm font-bold text-white focus:outline-none focus:border-[#16D1F5]"
+                      style={{ paddingLeft: '48px' }}
+                    />
+                  </div>
                   <span className="text-[10px] text-[#FFF9F2]/50 mt-1 block">
                     Producción anualizada promedio
                   </span>
@@ -156,12 +164,16 @@ export const RoiCalculator: React.FC = () => {
                   <label className="block text-xs font-bold text-white mb-1.5">
                     Margen de Override de Agencia (%)
                   </label>
-                  <input
-                    type="number"
-                    value={margenOverride}
-                    onChange={(e) => setMargenOverride(Math.max(1, Number(e.target.value)))}
-                    className="w-full bg-[#091542] border border-white/20 rounded-xl px-3.5 py-2 text-sm font-bold text-white focus:outline-none focus:border-[#16D1F5]"
-                  />
+                  <div className="relative">
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-extrabold text-[#16D1F5] pointer-events-none z-10">%</span>
+                    <input
+                      type="number"
+                      value={margenOverride}
+                      onChange={(e) => setMargenOverride(Math.max(1, Number(e.target.value)))}
+                      className="w-full bg-[#091542] border border-white/20 rounded-xl py-3 pr-3.5 text-sm font-bold text-white focus:outline-none focus:border-[#16D1F5]"
+                      style={{ paddingLeft: '48px' }}
+                    />
+                  </div>
                   <span className="text-[10px] text-[#FFF9F2]/50 mt-1 block">
                     Porcentaje de comisión diferencial
                   </span>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ArrowRight, CheckCircle2, Sparkles, ShieldCheck } from 'lucide-react';
+import { X, ArrowRight, CheckCircle2, Sparkles, ShieldCheck, User, Phone } from 'lucide-react';
 import { supabase } from '../../supabase';
 
 interface BookingModalProps {
@@ -110,33 +110,41 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                   <label htmlFor="modal-name" className="block text-xs uppercase tracking-wider font-bold text-[#060E32] mb-1.5">
                     Tu Nombre y Apellido <span className="text-[#1258FA]">*</span>
                   </label>
-                  <input
-                    id="modal-name"
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Ej. Roberto Sánchez"
-                    className="input-clean"
-                    required
-                    disabled={submitting}
-                  />
+                  <div className="relative">
+                    <User size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8C96AB] pointer-events-none z-10" />
+                    <input
+                      id="modal-name"
+                      type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="Ej. Roberto Sánchez"
+                      className="input-clean input-with-icon !pl-12 text-sm py-3.5"
+                      style={{ paddingLeft: '48px' }}
+                      required
+                      disabled={submitting}
+                    />
+                  </div>
                 </div>
 
                 <div>
                   <label htmlFor="modal-phone" className="block text-xs uppercase tracking-wider font-bold text-[#060E32] mb-1.5">
                     Tu Número de WhatsApp <span className="text-[#1258FA]">*</span>
                   </label>
-                  <input
-                    id="modal-phone"
-                    type="tel"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+1 (832) 890 1102"
-                    className="input-clean"
-                    required
-                    disabled={submitting}
-                  />
-                  <span className="text-[11px] text-[#8C96AB] mt-1 block">
+                  <div className="relative">
+                    <Phone size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8C96AB] pointer-events-none z-10" />
+                    <input
+                      id="modal-phone"
+                      type="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="+1 (832) 890 1102"
+                      className="input-clean input-with-icon !pl-12 text-sm py-3.5"
+                      style={{ paddingLeft: '48px' }}
+                      required
+                      disabled={submitting}
+                    />
+                  </div>
+                  <span className="text-[11px] text-[#8C96AB] mt-1.5 block">
                     Te enviaremos los detalles de acceso y confirmación por WhatsApp.
                   </span>
                 </div>

@@ -105,7 +105,7 @@ export const GatedModal: React.FC<GatedModalProps> = ({ onUnlock }) => {
                 Tu Nombre y Apellido <span className="text-[#1258FA]">*</span>
               </label>
               <div className="relative">
-                <User size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#8C96AB]" />
+                <User size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8C96AB] pointer-events-none z-10" />
                 <input
                   type="text"
                   value={name}
@@ -113,7 +113,8 @@ export const GatedModal: React.FC<GatedModalProps> = ({ onUnlock }) => {
                   placeholder="Ej. Roberto Sánchez"
                   required
                   disabled={loading}
-                  className="input-clean pl-10 text-sm py-3"
+                  className="input-clean input-with-icon !pl-12 text-sm py-3.5"
+                  style={{ paddingLeft: '48px' }}
                 />
               </div>
             </div>
@@ -124,7 +125,7 @@ export const GatedModal: React.FC<GatedModalProps> = ({ onUnlock }) => {
                 Tu Número de WhatsApp <span className="text-[#1258FA]">*</span>
               </label>
               <div className="relative">
-                <Phone size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#8C96AB]" />
+                <Phone size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8C96AB] pointer-events-none z-10" />
                 <input
                   type="tel"
                   value={phone}
@@ -132,7 +133,8 @@ export const GatedModal: React.FC<GatedModalProps> = ({ onUnlock }) => {
                   placeholder="+1 (832) 000 0000"
                   required
                   disabled={loading}
-                  className="input-clean pl-10 text-sm py-3"
+                  className="input-clean input-with-icon !pl-12 text-sm py-3.5"
+                  style={{ paddingLeft: '48px' }}
                 />
               </div>
             </div>
@@ -143,7 +145,7 @@ export const GatedModal: React.FC<GatedModalProps> = ({ onUnlock }) => {
                 Tu Correo Electrónico <span className="text-[#1258FA]">*</span>
               </label>
               <div className="relative">
-                <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#8C96AB]" />
+                <Mail size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8C96AB] pointer-events-none z-10" />
                 <input
                   type="email"
                   value={email}
@@ -151,7 +153,8 @@ export const GatedModal: React.FC<GatedModalProps> = ({ onUnlock }) => {
                   placeholder="agencia@ejemplo.com"
                   required
                   disabled={loading}
-                  className="input-clean pl-10 text-sm py-3"
+                  className="input-clean input-with-icon !pl-12 text-sm py-3.5"
+                  style={{ paddingLeft: '48px' }}
                 />
               </div>
             </div>
