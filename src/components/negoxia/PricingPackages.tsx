@@ -79,6 +79,15 @@ export const PricingPackages: React.FC = () => {
 
                 {/* Price Display */}
                 <div className="p-5 rounded-2xl bg-[#FFF9F2] border border-[#EDE3D5] mb-6">
+                  {/* Precio anterior tachado (Efecto de Anclaje de Precios) */}
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-lg sm:text-xl font-bold text-[#060E32]/45 line-through decoration-[#060E32]/40 tracking-tight">
+                      $1497 USD
+                    </span>
+                    <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#1258FA] bg-[#1258FA]/10 px-2 py-0.5 rounded-full">
+                      Ahorra 47%
+                    </span>
+                  </div>
                   <div className="flex items-baseline gap-1.5">
                     <span className="text-4xl sm:text-5xl font-black text-[#060E32]">$789</span>
                     <span className="text-xs sm:text-sm text-[#7380A0] font-semibold">USD / mes</span>
