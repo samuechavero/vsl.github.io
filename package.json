@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "homepage": "https://www.usaascent.com",
+  "homepage": "https://www.negoxiaautopilot.com",
   "scripts": {
     "predeploy": "pnpm run build",
     "deploy": "gh-pages -d dist",

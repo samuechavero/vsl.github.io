@@ -74,18 +74,18 @@ export const Footer: React.FC<FooterProps> = ({
             </span>
             <div className="space-y-2 text-xs text-[#FFF9F2]/80">
               <a
-                href="mailto:info@negoxiallc.com"
+                href="mailto:info@negoxiaautopilot.com"
                 className="flex items-center gap-2 hover:text-[#16D1F5] transition-colors"
               >
                 <Mail size={14} className="text-[#16D1F5]" />
-                <span>info@negoxiallc.com</span>
+                <span>info@negoxiaautopilot.com</span>
               </a>
               <a
-                href="mailto:support@negoxiallc.com"
+                href="mailto:support@negoxiaautopilot.com"
                 className="flex items-center gap-2 hover:text-[#16D1F5] transition-colors"
               >
                 <Mail size={14} className="text-[#16D1F5]" />
-                <span>support@negoxiallc.com</span>
+                <span>support@negoxiaautopilot.com</span>
               </a>
             </div>
 

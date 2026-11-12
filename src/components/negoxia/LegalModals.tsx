@@ -31,7 +31,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, type, onClose })
             <h3 className="text-2xl font-black mb-4">Política de Privacidad</h3>
             <div className="text-xs sm:text-sm text-[#4B5578] space-y-3 leading-relaxed">
               <p>
-                En <strong>Negoxia LLC</strong> (en adelante, &quot;Negoxia&quot;), accesible desde negoxiallc.com y usaascent.com, la privacidad de nuestros usuarios es una prioridad absoluta.
+                En <strong>Negoxia LLC</strong> (en adelante, &quot;Negoxia&quot;), accesible desde www.negoxiaautopilot.com, la privacidad de nuestros usuarios es una prioridad absoluta.
               </p>
               <h4 className="font-bold text-[#060E32] text-sm pt-2">1. Información que recopilamos</h4>
               <p>
@@ -39,7 +39,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, type, onClose })
               </p>
               <h4 className="font-bold text-[#060E32] text-sm pt-2">2. Uso de la información y Consentimiento para WhatsApp API y SMS</h4>
               <p>
-                Al proporcionar tu número de teléfono y correo electrónico, autorizas a Negoxia LLC a contactarte mediante llamadas, correos electrónicos, mensajes de texto (SMS) y mensajes a través de la API oficial de WhatsApp para brindarte información sobre nuestros servicios de automatización y reclutamiento para agencias, recordatorios de citas y soporte técnico. Puedes revocar tu consentimiento en cualquier momento enviando la palabra STOP o comunicándote a support@negoxiallc.com.
+                Al proporcionar tu número de teléfono y correo electrónico, autorizas a Negoxia LLC a contactarte mediante llamadas, correos electrónicos, mensajes de texto (SMS) y mensajes a través de la API oficial de WhatsApp para brindarte información sobre nuestros servicios de automatización y reclutamiento para agencias, recordatorios de citas y soporte técnico. Puedes revocar tu consentimiento en cualquier momento enviando la palabra STOP o comunicándote a support@negoxiaautopilot.com.
               </p>
               <h4 className="font-bold text-[#060E32] text-sm pt-2">3. No divulgación a terceros</h4>
               <p>
@@ -49,7 +49,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, type, onClose })
               <p>
                 Para cualquier duda respecto a esta política de privacidad, puedes contactarnos en:
                 <br />
-                <strong>info@negoxiallc.com</strong> | <strong>support@negoxiallc.com</strong>
+                <strong>info@negoxiaautopilot.com</strong> | <strong>support@negoxiaautopilot.com</strong>
               </p>
             </div>
           </div>
