@@ -18,13 +18,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onScrollToCalculator }) => {
             <div className="absolute inset-0 bg-gradient-to-r from-[#1258FA]/20 to-[#16D1F5]/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
             <img
               src="./brand/negoxia-logo.jpg"
-              alt="Negoxia LLC"
+              alt="Negoxia"
               className="h-10 sm:h-11 w-auto object-contain mix-blend-multiply transition-transform group-hover:scale-105"
             />
           </div>
           <div className="hidden xs:flex flex-col">
             <span className="text-[10px] tracking-[0.25em] font-extrabold text-[#1258FA] uppercase">
-              Negoxia LLC
+              Negoxia
             </span>
             <span className="text-[9px] text-[#4B5578] font-medium tracking-wider">
               AI Agency Recruiting

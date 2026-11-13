@@ -21,7 +21,7 @@ export const FinalCta: React.FC = () => {
         </h2>
 
         <p className="text-base sm:text-lg text-[#FFF9F2]/80 max-w-2xl mx-auto leading-relaxed mb-8">
-          Agenda una sesión estratégica con Negoxia LLC. Evaluamos tu estructura actual y trazamos el plan de reclutamiento automatizado con IA para duplicar el tamaño de tu organización.
+          Agenda una sesión estratégica con Negoxia. Evaluamos tu estructura actual y trazamos el plan de reclutamiento automatizado con IA para duplicar el tamaño de tu organización.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">

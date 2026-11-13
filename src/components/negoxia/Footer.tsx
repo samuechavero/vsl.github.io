@@ -23,11 +23,11 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="flex items-center gap-3">
               <img
                 src="./brand/negoxia-logo.jpg"
-                alt="Negoxia LLC"
+                alt="Negoxia"
                 className="h-10 w-auto object-contain rounded bg-white p-1"
               />
               <span className="text-sm font-black tracking-widest uppercase text-white">
-                NEGOXIA LLC
+                NEGOXIA
               </span>
             </div>
             <p className="text-xs text-[#FFF9F2]/75 leading-relaxed max-w-sm mt-1">

@@ -23,7 +23,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, type, onClose })
 
         <div className="flex items-center gap-2 mb-4 text-[#1258FA]">
           <Shield size={20} />
-          <span className="text-xs font-bold uppercase tracking-widest">Negoxia LLC · Documento Legal</span>
+          <span className="text-xs font-bold uppercase tracking-widest">Negoxia · Documento Legal</span>
         </div>
 
         {type === 'privacy' ? (

@@ -25,7 +25,7 @@ export const FitSection: React.FC = () => {
             <span>Filtro de afinidad</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#060E32] tracking-tight">
-            ¿Es Negoxia LLC el socio ideal para tu agencia?
+            ¿Es Negoxia el socio ideal para tu agencia?
           </h2>
           <p className="mt-4 text-base text-[#4B5578] leading-relaxed">
             Trabajamos con líderes comprometidos a duplicar su equipo y escalar su organización mediante sistemas de Inteligencia Artificial y automatización comercial.

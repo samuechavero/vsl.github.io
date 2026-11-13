@@ -18,16 +18,12 @@ export const FaqSection: React.FC = () => {
       a: 'El servicio cuenta con un contrato mínimo de permanencia de 3 meses para permitir el despliegue técnico, la optimización algorítmica y la consolidación de tu flujo de contratación. Todos los pagos son no reembolsables debido a los costos operativos inmediatos y servidores dedicados asignados a tu agencia.',
     },
     {
-      q: '¿Cómo funciona el presupuesto publicitario incluido?',
-      a: 'Dentro de tu cuota mensual de $789 USD ya contemplamos el presupuesto publicitario necesario en Meta Ads para mantener activas las campañas de atracción sin que tengas que lidiar con cuentas complejas ni recargos sorpresa.',
+      q: '¿El presupuesto para publicidad en Meta Ads está incluido?',
+      a: 'Sí. Nuestro paquete de inicio de $789 ya trae incluido un Bono de Inicio de $200 USD destinados íntegramente a tu pauta publicitaria. No necesitas agregar presupuesto extra para arrancar tus campañas iniciales.',
     },
     {
-      q: '¿Cuánto tiempo tarda la instalación e inicio de entrevistas?',
-      a: 'Una vez completado el onboarding inicial y recibidos los accesos, nuestro equipo técnico tarda entre 3 a 5 días hábiles en tener tus agentes IA, embudos y campañas operando. Muchos líderes reciben sus primeras entrevistas agendadas durante la primera semana.',
-    },
-    {
-      q: '¿Los candidatos y datos de mi agencia me pertenecen?',
-      a: 'Sí, 100%. Todos los prospectos, contactos, conversaciones y métricas generadas son propiedad exclusiva de tu agencia. Tienes acceso completo e irrestricto a tu subcuenta.',
+      q: '¿En cuánto tiempo mi sistema automatizado estará listo y funcionando?',
+      a: 'Una vez que completas tu onboarding, nuestro equipo configura e implementa tus agentes de IA, embudos y CRM en un lapso de pocos días, dejándolo 100% operativo para captar leads y agendar citas en piloto automático.',
     },
   ];
 

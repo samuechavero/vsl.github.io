@@ -27,7 +27,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenWheel }) => {
         <div className="flex justify-center mb-6">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1258FA]/8 border border-[#1258FA]/25 text-[#1258FA] text-xs sm:text-sm font-bold tracking-tight shadow-sm">
             <Sparkles size={14} className="text-[#16D1F5] animate-pulse" />
-            <span>Automatización Inteligente con IA para Reclutamiento · Negoxia LLC</span>
+            <span>Automatización Inteligente con IA para Reclutamiento · Negoxia</span>
           </div>
         </div>
 

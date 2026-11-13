@@ -92,9 +92,9 @@ export const PricingPackages: React.FC = () => {
                     <span className="text-4xl sm:text-5xl font-black text-[#060E32]">$789</span>
                     <span className="text-xs sm:text-sm text-[#7380A0] font-semibold">USD / mes</span>
                   </div>
-                  <div className="mt-2 inline-flex items-center gap-1.5 text-xs text-[#1258FA] font-bold">
-                    <Check size={14} className="stroke-[3]" />
-                    <span>Presupuesto publicitario incluido</span>
+                  <div className="mt-2.5 p-2 rounded-xl bg-[#1258FA]/10 border border-[#1258FA]/20 flex items-center gap-2 text-xs text-[#1258FA] font-extrabold">
+                    <Check size={14} className="stroke-[3] shrink-0" />
+                    <span>Bono $200 USD en pauta incluido (Cero costo extra)</span>
                   </div>
                 </div>
               </div>
@@ -126,9 +126,30 @@ export const PricingPackages: React.FC = () => {
 
             {/* Right Column: Features List */}
             <div className="lg:col-span-7">
-              <h4 className="text-xs font-black uppercase tracking-wider text-[#060E32] mb-4">
+              <h4 className="text-xs font-black uppercase tracking-wider text-[#060E32] mb-3">
                 ¿Qué incluye el Negoxia Pack Fast Start?
               </h4>
+
+              {/* ÍTEM DESTACADO: BONO DE INICIO $200 USD INCLUIDOS */}
+              <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#1258FA]/12 via-[#16D1F5]/15 to-[#1258FA]/10 border-2 border-[#1258FA]/50 shadow-lg mb-4 relative overflow-hidden group">
+                <div className="flex items-start gap-3.5">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#1258FA] to-[#16D1F5] flex items-center justify-center text-white shrink-0 shadow-md">
+                    <Sparkles size={20} className="animate-pulse" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#1258FA] text-white text-[10px] font-black uppercase tracking-wider mb-1.5 shadow-sm">
+                      <span>Inversión Absorbida · Cero Costo Extra</span>
+                    </div>
+                    <h5 className="text-sm sm:text-base font-black text-[#060E32] leading-snug">
+                      BONO DE INICIO: $200 USD de presupuesto para pauta publicitaria en Meta Ads INCLUIDOS
+                    </h5>
+                    <p className="text-xs text-[#3A4566] mt-1.5 leading-relaxed">
+                      Tus primeros <strong>$200 USD</strong> de presupuesto para anuncios en Meta Ads ya están <strong>100% absorbidos dentro de tu pago mensual de $789 USD</strong>. No necesitas aportar presupuesto extra de tu bolsillo para poner en marcha tus campañas iniciales.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               <div className="space-y-3.5">
                 {features.map((item, idx) => (
                   <div key={idx} className="p-3.5 rounded-xl bg-[#FFF9F2] border border-[#EDE3D5]/80 flex items-start gap-3">

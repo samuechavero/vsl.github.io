@@ -74,7 +74,7 @@ export const Problem: React.FC = () => {
               <span className="text-[#16D1F5]">Tienen un ecosistema con IA que recluta 24/7.</span>
             </p>
             <p className="mt-4 text-sm sm:text-base text-[#FFF9F2]/80 leading-relaxed max-w-2xl mx-auto">
-              Eso es exactamente <strong>Negoxia LLC</strong>: tu infraestructura tecnológica completa con agentes IA conversacionales, embudos de reclutamiento, sincronización de calendarios y campañas publicitarias para llenar tu agencia con nuevo talento cada semana.
+              Eso es exactamente <strong>Negoxia</strong>: tu infraestructura tecnológica completa con agentes IA conversacionales, embudos de reclutamiento, sincronización de calendarios y campañas publicitarias para llenar tu agencia con nuevo talento cada semana.
             </p>
           </div>
         </div>

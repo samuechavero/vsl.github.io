@@ -84,7 +84,7 @@ export const GatedModal: React.FC<GatedModalProps> = ({ onUnlock }) => {
           <div className="flex justify-center mb-4">
             <img
               src="./brand/negoxia-logo.jpg"
-              alt="Negoxia LLC"
+              alt="Negoxia"
               className="h-10 sm:h-11 w-auto object-contain rounded mix-blend-multiply"
             />
           </div>
