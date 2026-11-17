@@ -48,19 +48,19 @@ export const GatedModal: React.FC<GatedModalProps> = ({ onUnlock }) => {
         console.warn('Supabase lead note:', insertError);
       }
 
-      // Meta Pixel Event Lead
-      if (typeof window !== 'undefined' && (window as any).fbq) {
-        (window as any).fbq('track', 'Lead', {
-          content_name: 'Content Gate Reclutamiento',
-          em: cleanEmail.toLowerCase(),
-        });
+      // Meta Pixel Event: Lead
+      if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+        (window as any).fbq('track', 'Lead');
       }
 
       setLoading(false);
       onUnlock();
     } catch (err) {
       console.error('Error al registrar prospecto:', err);
-      // En caso de incidencia de red, desbloquear para no frustrar la experiencia
+      // Disparar evento Lead para registrar la conversión del formulario
+      if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+        (window as any).fbq('track', 'Lead');
+      }
       setLoading(false);
       onUnlock();
     }

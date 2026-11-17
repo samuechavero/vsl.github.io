@@ -43,11 +43,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
         console.warn('Supabase lead note:', insertError);
       }
 
-      // Meta Pixel Lead tracking
-      if (typeof window !== 'undefined' && (window as any).fbq) {
-        (window as any).fbq('track', 'Lead', {
-          content_name: 'Diagnóstico Negoxia Autopilot',
-        });
+      // Meta Pixel Event: Lead
+      if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+        (window as any).fbq('track', 'Lead');
       }
 
       setSuccess(true);
