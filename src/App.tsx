@@ -12,7 +12,6 @@ import { FitSection } from './components/negoxia/FitSection';
 import { FaqSection } from './components/negoxia/FaqSection';
 import { FinalCta } from './components/negoxia/FinalCta';
 import { Footer } from './components/negoxia/Footer';
-import { WheelModal } from './components/negoxia/WheelModal';
 import { LegalModal } from './components/negoxia/LegalModals';
 import { FloatingEbookBadge } from './components/negoxia/FloatingEbookBadge';
 import { SocialProofToast } from './components/negoxia/SocialProofToast';
@@ -26,7 +25,6 @@ export default function App() {
     }
     return false;
   });
-  const [isWheelOpen, setIsWheelOpen] = useState(false);
   const [isBookOpen, setIsBookOpen] = useState(false);
   const [legalModal, setLegalModal] = useState<{ isOpen: boolean; type: 'privacy' | 'terms' }>({
     isOpen: false,
@@ -51,14 +49,6 @@ export default function App() {
     } catch (e) {
       // ignore
     }
-  };
-
-  const handleOpenWheel = () => {
-    setIsWheelOpen(true);
-  };
-
-  const handleCloseWheel = () => {
-    setIsWheelOpen(false);
   };
 
   const handleOpenPrivacy = () => {
@@ -101,8 +91,8 @@ export default function App() {
         <Navbar onScrollToCalculator={scrollToCalculator} />
 
         <main>
-          {/* SECCIÓN 1: Hero Section con Video, Formulario con Correo y CTA de Ruleta */}
-          <Hero onOpenWheel={handleOpenWheel} />
+          {/* SECCIÓN 1: Hero Section con Video, Formulario con Correo y CTA Agendar Demo */}
+          <Hero />
 
           {/* SECCIÓN 2: Soluciones Principales (3 Tarjetas Glassmorphism con IA) */}
           <ServicesFeatures />
@@ -149,11 +139,6 @@ export default function App() {
         onClose={handleCloseBook}
       />
 
-      {/* Pop-up de Ruleta (Gamificación con texto requerido) */}
-      <WheelModal
-        isOpen={isWheelOpen}
-        onClose={handleCloseWheel}
-      />
 
       {/* Modales de Cumplimiento Meta (WhatsApp API Privacy & Terms) */}
       <LegalModal

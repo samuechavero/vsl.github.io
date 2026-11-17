@@ -1,11 +1,9 @@
 import React, { useRef, useState } from 'react';
-import { Volume2, Play, Sparkles, Gift } from 'lucide-react';
+import { Volume2, Play, Sparkles, Calendar, ArrowRight } from 'lucide-react';
 
-interface HeroProps {
-  onOpenWheel: () => void;
-}
+const CALENDLY_URL = 'https://calendly.com/vitalshieldinsurance';
 
-export const Hero: React.FC<HeroProps> = ({ onOpenWheel }) => {
+export const Hero: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hasInteracted, setHasInteracted] = useState(false);
 
@@ -76,19 +74,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenWheel }) => {
             </div>
           </div>
 
-          {/* Video CTA button for wheel pop-up */}
-          <div className="w-full max-w-xl mt-5 text-center">
-            <button
-              onClick={onOpenWheel}
-              type="button"
-              className="w-full group inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-gradient-to-r from-[#1258FA] via-[#16D1F5] to-[#1258FA] text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-[#1258FA]/25 hover:scale-[1.02] active:scale-95 transition-all cursor-pointer animate-pulse"
+          {/* Video CTA button - Agendar Demo */}
+          <div className="w-full max-w-xl mt-6 text-center">
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full group inline-flex items-center justify-center gap-2.5 px-8 py-4 sm:py-4.5 rounded-2xl bg-gradient-to-r from-[#1258FA] via-[#16D1F5] to-[#1258FA] text-white font-black text-base sm:text-lg shadow-xl shadow-[#1258FA]/30 hover:shadow-[#1258FA]/50 hover:scale-[1.02] active:scale-95 transition-all cursor-pointer"
             >
-              <Gift size={18} className="text-white group-hover:rotate-12 transition-transform" />
-              <span className="tracking-wide">
-                Aprieta aquí abajo para que te regalemos a ver si tienes suerte
-              </span>
-              <span className="text-base">🎰</span>
-            </button>
+              <Calendar size={20} className="text-white group-hover:scale-110 transition-transform" />
+              <span className="tracking-wide">Agendar Demo</span>
+              <ArrowRight size={20} className="text-white group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
         </div>
       </div>
