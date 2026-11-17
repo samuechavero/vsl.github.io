@@ -1,5 +1,6 @@
 import React from 'react';
-import { BookOpen, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import { BookOpen, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { BookCoverCode } from './BookCoverCode';
 
 const CALENDLY_URL = 'https://calendly.com/vitalshieldinsurance';
 
@@ -16,43 +17,9 @@ export const EbookSection: React.FC<EbookSectionProps> = ({ onOpenReader }) => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-center">
-          {/* Professional Book Cover Column (5 cols) */}
+          {/* Professional Book Cover Column rendered via Code (5 cols) */}
           <div className="lg:col-span-5 flex justify-center">
-            <div
-              onClick={onOpenReader}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && onOpenReader?.()}
-              className="relative group cursor-pointer max-w-[280px] sm:max-w-[320px] transition-all duration-500 hover:scale-105"
-            >
-              {/* Outer Glow */}
-              <div className="absolute -inset-2 bg-gradient-to-tr from-[#1258FA]/40 via-[#16D1F5]/30 to-transparent rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity" />
-
-              {/* Book Container with Realistic Spine and Shadows */}
-              <div className="relative rounded-2xl overflow-hidden border-2 border-[#16D1F5]/40 shadow-[0_25px_60px_rgba(6,14,50,0.8)] bg-[#040A24]">
-                <img
-                  src="./ebook-cover.png"
-                  alt="Portada del libro La Anatomía del Vendedor Invisible - Samuel Chavero"
-                  className="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-[1.02]"
-                />
-
-                {/* Interactive Click-to-read Overlay Badge */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060E32]/90 via-[#060E32]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-end p-6">
-                  <div className="px-4 py-2 rounded-full bg-gradient-to-r from-[#1258FA] to-[#16D1F5] text-white text-xs font-black flex items-center gap-2 shadow-xl transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                    <BookOpen size={15} />
-                    <span>Abrir y Leer Ahora</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Subtle Label Under Cover */}
-              <div className="mt-4 text-center">
-                <span className="text-[11px] uppercase tracking-[0.2em] font-extrabold text-[#16D1F5] flex items-center justify-center gap-1.5">
-                  <Sparkles size={13} />
-                  <span>Haz clic para leer en línea</span>
-                </span>
-              </div>
-            </div>
+            <BookCoverCode onClick={onOpenReader} />
           </div>
 
           {/* Text Content Column (7 cols) */}

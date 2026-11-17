@@ -105,11 +105,11 @@ export default function App() {
 
       {/* Contenido de la Landing Page: Bloqueado y desenfocado hasta completar datos */}
       <div className={`flex flex-col min-h-screen ${!isUnlocked ? 'filter blur-md pointer-events-none select-none max-h-screen overflow-hidden' : ''}`}>
-        {/* Barra Superior con Cuenta Regresiva de 30 Minutos */}
-        <CountdownTimer onScrollToPricing={scrollToPricing} />
-
-        {/* Sticky Header */}
-        <Navbar onScrollToCalculator={scrollToCalculator} />
+        {/* Sticky Header Wrapper (Temporizador + Navbar fijados juntos en todo momento) */}
+        <div className="sticky top-0 z-50 transition-all shadow-md">
+          <CountdownTimer onScrollToPricing={scrollToPricing} />
+          <Navbar onScrollToCalculator={scrollToCalculator} />
+        </div>
 
         <main>
           {/* SECCIÓN 1: Hero Section con Video, Formulario con Correo y CTA de Ruleta */}

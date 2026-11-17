@@ -91,12 +91,12 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ onScrollToPricin
         {/* Center Countdown Display */}
         <div className="flex items-center gap-2">
           <span className="text-[11px] sm:text-xs text-white/70 hidden sm:inline">
-            Expira en:
+            Oferta por tiempo limitado:
           </span>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-gradient-to-r from-[#1258FA]/25 to-[#16D1F5]/20 border border-[#16D1F5]/50 shadow-inner font-mono font-black text-xs sm:text-sm tracking-wider">
-            <span className="text-white">{minutes}</span>
-            <span className="text-[#16D1F5] animate-ping">:</span>
-            <span className="text-white">{seconds}</span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-[#060E32] border border-[#16D1F5]/50 shadow-[0_0_15px_rgba(22,209,245,0.25)] font-mono font-black text-xs sm:text-sm tracking-wider">
+            <span className="text-[#16D1F5] font-black">{minutes}</span>
+            <span className="text-orange-400 font-bold animate-pulse">:</span>
+            <span className="text-orange-400 font-black">{seconds}</span>
           </div>
         </div>
 

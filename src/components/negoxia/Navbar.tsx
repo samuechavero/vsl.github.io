@@ -9,7 +9,7 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ onScrollToCalculator }) => {
   return (
-    <header className="sticky top-0 z-40 bg-[#FFF9F2]/85 backdrop-blur-xl border-b border-[#EDE3D5]/80 transition-all">
+    <header className="w-full bg-[#FFF9F2]/90 backdrop-blur-xl border-b border-[#EDE3D5]/80 transition-all">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
         {/* Brand Logo - Transparent Tech Aesthetic */}
         <a href="#" className="flex items-center gap-3 group">
