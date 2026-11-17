@@ -124,9 +124,9 @@ export const ServicesFeatures: React.FC = () => {
             href={CALENDLY_URL}
             target="_blank"
             rel="noreferrer"
-            className="btn-primary w-full sm:w-auto px-8 py-4 text-sm font-bold flex items-center justify-center gap-2 shadow-xl whitespace-nowrap cursor-pointer"
+            className="btn-primary w-full sm:w-auto px-8 py-4 text-sm font-bold flex items-center justify-center gap-2 shadow-xl whitespace-nowrap cursor-pointer hover:scale-105 transition-transform"
           >
-            <span>Quiero atención prioritaria</span>
+            <span>Escala aquí tu negocio</span>
             <ArrowRight size={17} />
           </a>
         </div>

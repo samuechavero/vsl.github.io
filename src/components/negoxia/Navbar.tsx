@@ -77,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onScrollToCalculator }) => {
             rel="noreferrer"
             className="btn-primary px-4 sm:px-6 py-2.5 text-xs sm:text-sm font-bold flex items-center gap-2 shadow-lg cursor-pointer whitespace-nowrap"
           >
-            <span>Quiero atención prioritaria</span>
+            <span>Inicia ahora</span>
             <ArrowRight size={15} />
           </a>
         </div>

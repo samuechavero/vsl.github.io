@@ -29,9 +29,9 @@ export const FinalCta: React.FC = () => {
             href={CALENDLY_URL}
             target="_blank"
             rel="noreferrer"
-            className="btn-primary w-full sm:w-auto px-10 py-4 text-base sm:text-lg font-bold flex items-center justify-center gap-2 shadow-2xl group cursor-pointer"
+            className="btn-primary w-full sm:w-auto px-10 py-4 text-base sm:text-lg font-bold flex items-center justify-center gap-2 shadow-2xl group cursor-pointer hover:scale-105 transition-all"
           >
-            <span>Quiero atención prioritaria</span>
+            <span>Inicia ahora</span>
             <ArrowRight size={19} className="transition-transform group-hover:translate-x-1" />
           </a>
         </div>

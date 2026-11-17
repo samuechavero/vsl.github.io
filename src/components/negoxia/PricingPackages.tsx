@@ -118,7 +118,7 @@ export const PricingPackages: React.FC = () => {
                 rel="noopener noreferrer"
                 className="btn-primary w-full py-4 text-sm sm:text-base font-black flex items-center justify-center gap-2 shadow-xl hover:scale-[1.02] active:scale-95 transition-all cursor-pointer"
               >
-                <span>Comenzar con Plan 01</span>
+                <span>Inicia ahora</span>
                 <ArrowRight size={18} />
               </a>
 
@@ -206,7 +206,7 @@ export const PricingPackages: React.FC = () => {
                 rel="noopener noreferrer"
                 className="w-full py-4 text-sm sm:text-base font-black flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#16D1F5] to-[#1258FA] text-white shadow-xl shadow-[#16D1F5]/25 hover:scale-[1.02] active:scale-95 transition-all cursor-pointer"
               >
-                <span>Comenzar con Plan 02</span>
+                <span>Escala aquí tu negocio</span>
                 <ArrowRight size={18} />
               </a>
 
