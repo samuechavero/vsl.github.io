@@ -49,7 +49,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenWheel }) => {
               <video
                 ref={videoRef}
                 className="absolute inset-0 w-full h-full object-cover"
-                src="./samuvsl.mp4?v=2"
+                src="./willvideo.mp4"
                 controls={hasInteracted}
                 playsInline
                 muted
