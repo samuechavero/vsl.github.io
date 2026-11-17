@@ -17,7 +17,6 @@ import { LegalModal } from './components/negoxia/LegalModals';
 import { FloatingEbookBadge } from './components/negoxia/FloatingEbookBadge';
 import { SocialProofToast } from './components/negoxia/SocialProofToast';
 import { GatedModal } from './components/negoxia/GatedModal';
-import { CountdownTimer } from './components/negoxia/CountdownTimer';
 import { EbookReaderModal } from './components/negoxia/EbookReaderModal';
 
 export default function App() {
@@ -28,7 +27,7 @@ export default function App() {
     return false;
   });
   const [isWheelOpen, setIsWheelOpen] = useState(false);
-  const [isEbookReaderOpen, setIsEbookReaderOpen] = useState(false);
+  const [isBookOpen, setIsBookOpen] = useState(false);
   const [legalModal, setLegalModal] = useState<{ isOpen: boolean; type: 'privacy' | 'terms' }>({
     isOpen: false,
     type: 'privacy',
@@ -74,26 +73,19 @@ export default function App() {
     setLegalModal((prev) => ({ ...prev, isOpen: false }));
   };
 
+  const handleOpenBook = () => {
+    setIsBookOpen(true);
+  };
+
+  const handleCloseBook = () => {
+    setIsBookOpen(false);
+  };
+
   const scrollToCalculator = () => {
     const el = document.getElementById('calculadora');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-  const scrollToPricing = () => {
-    const el = document.getElementById('paquetes');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleOpenEbookReader = () => {
-    setIsEbookReaderOpen(true);
-  };
-
-  const handleCloseEbookReader = () => {
-    setIsEbookReaderOpen(false);
   };
 
   return (
@@ -105,11 +97,8 @@ export default function App() {
 
       {/* Contenido de la Landing Page: Bloqueado y desenfocado hasta completar datos */}
       <div className={`flex flex-col min-h-screen ${!isUnlocked ? 'filter blur-md pointer-events-none select-none max-h-screen overflow-hidden' : ''}`}>
-        {/* Sticky Header Wrapper (Temporizador + Navbar fijados juntos en todo momento) */}
-        <div className="sticky top-0 z-50 transition-all shadow-md">
-          <CountdownTimer onScrollToPricing={scrollToPricing} />
-          <Navbar onScrollToCalculator={scrollToCalculator} />
-        </div>
+        {/* Sticky Header con Temporizador de 30:00 y CTA */}
+        <Navbar onScrollToCalculator={scrollToCalculator} />
 
         <main>
           {/* SECCIÓN 1: Hero Section con Video, Formulario con Correo y CTA de Ruleta */}
@@ -119,7 +108,7 @@ export default function App() {
           <ServicesFeatures />
 
           {/* SECCIÓN 3: E-Book ("La Anatomía del Vendedor Invisible") */}
-          <EbookSection onOpenReader={handleOpenEbookReader} />
+          <EbookSection onOpenReader={handleOpenBook} />
 
           {/* SECCIÓN 4: Calculadora de Escalado y Reclutamiento de Agencia */}
           <RoiCalculator />
@@ -154,6 +143,12 @@ export default function App() {
         />
       </div>
 
+      {/* Lector del Libro dentro de la Web (Modal Fullscreen Inmersivo) */}
+      <EbookReaderModal
+        isOpen={isBookOpen}
+        onClose={handleCloseBook}
+      />
+
       {/* Pop-up de Ruleta (Gamificación con texto requerido) */}
       <WheelModal
         isOpen={isWheelOpen}
@@ -167,16 +162,10 @@ export default function App() {
         onClose={handleCloseLegal}
       />
 
-      {/* Vista Web de Lectura del E-Book (Modal Inmersivo a Pantalla Completa) */}
-      <EbookReaderModal
-        isOpen={isEbookReaderOpen}
-        onClose={handleCloseEbookReader}
-      />
-
       {/* Elementos Flotantes Fijos al Viewport (z-[9999]) - solo tras desbloquear */}
       {isUnlocked && (
         <>
-          <FloatingEbookBadge onOpenReader={handleOpenEbookReader} />
+          <FloatingEbookBadge onOpenReader={handleOpenBook} />
           <SocialProofToast />
         </>
       )}

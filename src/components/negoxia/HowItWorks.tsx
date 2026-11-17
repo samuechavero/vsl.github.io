@@ -125,10 +125,10 @@ export const HowItWorks: React.FC = () => {
             href={CALENDLY_URL}
             target="_blank"
             rel="noreferrer"
-            className="btn-primary w-full sm:w-auto px-7 py-3.5 text-sm font-bold flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer shadow-lg"
+            className="btn-primary w-full sm:w-auto px-8 py-4 text-base font-black flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer shadow-xl shadow-[#1258FA]/25 hover:shadow-[#1258FA]/40 hover:scale-105 active:scale-95 transition-all"
           >
-            <span>Quiero atención prioritaria</span>
-            <ArrowRight size={16} />
+            <span>Escala aquí tu negocio</span>
+            <ArrowRight size={17} />
           </a>
         </div>
       </div>

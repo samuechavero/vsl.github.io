@@ -234,9 +234,9 @@ export const RoiCalculator: React.FC = () => {
                   href={CALENDLY_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="btn-primary w-full py-4 text-xs sm:text-sm font-extrabold flex items-center justify-center gap-2 shadow-2xl cursor-pointer hover:scale-[1.02] transition-transform"
+                  className="btn-primary w-full py-4 text-xs sm:text-sm font-black flex items-center justify-center gap-2 shadow-2xl shadow-[#1258FA]/30 cursor-pointer hover:scale-[1.02] active:scale-95 transition-all"
                 >
-                  <span>Quiero atención prioritaria</span>
+                  <span>Escala aquí tu negocio</span>
                   <ArrowRight size={16} />
                 </a>
 
