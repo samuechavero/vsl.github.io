@@ -91,7 +91,7 @@ export default function App() {
         <Navbar onScrollToCalculator={scrollToCalculator} />
 
         <main>
-          {/* SECCIÓN 1: Hero Section con Video, Formulario con Correo y CTA Agendar Demo */}
+          {/* SECCIÓN 1: Hero Section con Video y CTA WhatsApp */}
           <Hero />
 
           {/* SECCIÓN 2: Soluciones Principales (3 Tarjetas Glassmorphism con IA) */}

@@ -1,7 +1,7 @@
 import React from 'react';
-import { ClipboardList, Sliders, Rocket, ArrowRight, ShieldCheck, CheckCircle2, Sparkles } from 'lucide-react';
+import { ClipboardList, Sliders, Rocket, ArrowRight, ShieldCheck, CheckCircle2, Sparkles, MessageCircle } from 'lucide-react';
 
-const CALENDLY_URL = 'https://calendly.com/vitalshieldinsurance';
+const WHATSAPP_URL = 'https://wa.me/13463249088?text=Hola%2C%20ya%20realic%C3%A9%20mi%20registro';
 
 export const HowItWorks: React.FC = () => {
   const steps = [
@@ -122,12 +122,13 @@ export const HowItWorks: React.FC = () => {
           </div>
 
           <a
-            href={CALENDLY_URL}
+            href={WHATSAPP_URL}
             target="_blank"
-            rel="noreferrer"
-            className="btn-primary w-full sm:w-auto px-8 py-4 text-base font-black flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer shadow-xl shadow-[#1258FA]/25 hover:shadow-[#1258FA]/40 hover:scale-105 active:scale-95 transition-all"
+            rel="noopener noreferrer"
+            className="btn-primary w-full sm:w-auto px-8 py-4 text-base font-black flex items-center justify-center gap-2.5 whitespace-nowrap cursor-pointer shadow-xl shadow-[#1258FA]/25 hover:shadow-[#1258FA]/40 hover:scale-105 active:scale-95 transition-all"
           >
-            <span>Escala aquí tu negocio</span>
+            <MessageCircle size={18} className="text-white" />
+            <span>Ya realicé mi registro</span>
             <ArrowRight size={17} />
           </a>
         </div>
