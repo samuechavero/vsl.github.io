@@ -1,7 +1,7 @@
 import React from 'react';
-import { ArrowRight, MessageCircle, CheckCircle2, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowRight, Calendar, CheckCircle2, ShieldCheck, Sparkles } from 'lucide-react';
 
-const WHATSAPP_URL = 'https://wa.me/13463249088?text=Hola%2C%20ya%20realic%C3%A9%20mi%20registro';
+const CALENDLY_URL = 'https://calendly.com/vitalshieldinsurance';
 
 export const FinalCta: React.FC = () => {
   return (
@@ -26,13 +26,12 @@ export const FinalCta: React.FC = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
           <a
-            href={WHATSAPP_URL}
+            href={CALENDLY_URL}
             target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary w-full sm:w-auto px-10 py-4 text-base sm:text-lg font-black flex items-center justify-center gap-2.5 shadow-2xl shadow-[#1258FA]/40 hover:scale-105 active:scale-95 transition-all group cursor-pointer"
+            rel="noreferrer"
+            className="btn-primary w-full sm:w-auto px-10 py-4 text-base sm:text-lg font-black flex items-center justify-center gap-2 shadow-2xl shadow-[#1258FA]/40 hover:scale-105 active:scale-95 transition-all group cursor-pointer"
           >
-            <MessageCircle size={20} className="text-white group-hover:scale-110 transition-transform" />
-            <span>Ya realicé mi registro</span>
+            <span>Escala aquí tu negocio</span>
             <ArrowRight size={19} className="transition-transform group-hover:translate-x-1" />
           </a>
         </div>

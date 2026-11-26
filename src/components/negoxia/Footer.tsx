@@ -1,6 +1,8 @@
 import React from 'react';
 import { Mail, Shield, Calculator, FileText, CheckCircle2 } from 'lucide-react';
 
+const CALENDLY_URL = 'https://calendly.com/vitalshieldinsurance';
+
 interface FooterProps {
   onScrollToCalculator?: () => void;
   onOpenPrivacy?: () => void;

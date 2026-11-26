@@ -1,8 +1,8 @@
 import React from 'react';
-import { ArrowRight, BookOpen, Sparkles, CheckCircle2, MessageCircle } from 'lucide-react';
+import { ArrowRight, BookOpen, Sparkles, CheckCircle2 } from 'lucide-react';
 import { BookCoverCode } from './BookCoverCode';
 
-const WHATSAPP_URL = 'https://wa.me/13463249088?text=Hola%2C%20ya%20realic%C3%A9%20mi%20registro';
+const CALENDLY_URL = 'https://calendly.com/vitalshieldinsurance';
 
 interface EbookSectionProps {
   onOpenReader?: () => void;
@@ -67,13 +67,12 @@ export const EbookSection: React.FC<EbookSectionProps> = ({ onOpenReader }) => {
               </button>
 
               <a
-                href={WHATSAPP_URL}
+                href={CALENDLY_URL}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary px-8 py-4 text-base font-black flex items-center justify-center gap-2.5 shadow-xl shadow-[#1258FA]/30 hover:scale-[1.02] active:scale-95 transition-all cursor-pointer"
+                rel="noreferrer"
+                className="btn-primary px-8 py-4 text-base font-black flex items-center justify-center gap-2 shadow-xl shadow-[#1258FA]/30 hover:scale-[1.02] active:scale-95 transition-all cursor-pointer"
               >
-                <MessageCircle size={18} className="text-white" />
-                <span>Ya realicé mi registro</span>
+                <span>Inicia ahora</span>
                 <ArrowRight size={18} />
               </a>
             </div>

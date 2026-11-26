@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Calculator, Clock, Menu, X, Bot, HelpCircle, Users, Sparkles, TrendingUp } from 'lucide-react';
 
-const WHATSAPP_URL = 'https://wa.me/13463249088?text=Hola%2C%20ya%20realic%C3%A9%20mi%20registro';
+const CALENDLY_URL = 'https://calendly.com/vitalshieldinsurance';
 
 interface NavbarProps {
   onScrollToCalculator?: () => void;
@@ -158,9 +158,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onScrollToCalculator }) => {
         {/* Right CTA con "Inicia ahora" y Glow Azul Eléctrico + Hamburguesa Móvil */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <a
-            href={WHATSAPP_URL}
+            href={CALENDLY_URL}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
             className="btn-primary px-3.5 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-black flex items-center gap-1.5 sm:gap-2 shadow-xl shadow-[#1258FA]/25 hover:shadow-[#1258FA]/45 hover:scale-[1.03] active:scale-95 transition-all cursor-pointer whitespace-nowrap"
           >
             <span>Inicia ahora</span>
@@ -197,9 +197,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onScrollToCalculator }) => {
           </div>
 
           <a
-            href={WHATSAPP_URL}
+            href={CALENDLY_URL}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
             onClick={() => setMobileMenuOpen(false)}
             className="btn-primary w-full py-3.5 text-sm font-black flex items-center justify-center gap-2 shadow-xl shadow-[#1258FA]/25 cursor-pointer"
           >

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Calculator, Users, TrendingUp, DollarSign, ArrowRight, Sparkles, CheckCircle2, Megaphone, Coins, MessageCircle } from 'lucide-react';
+import { Calculator, Users, TrendingUp, DollarSign, ArrowRight, Sparkles, CheckCircle2, Megaphone, Coins } from 'lucide-react';
 
-const WHATSAPP_URL = 'https://wa.me/13463249088?text=Hola%2C%20ya%20realic%C3%A9%20mi%20registro';
+const CALENDLY_URL = 'https://calendly.com/vitalshieldinsurance';
 const COST_PER_RESULT = 2.05; // Costo por resultado fijo establecido en $2.05 USD
 
 export const RoiCalculator: React.FC = () => {
@@ -231,13 +231,12 @@ export const RoiCalculator: React.FC = () => {
               {/* Action Button & Highlighted Revenue Banner */}
               <div className="mt-6 space-y-3">
                 <a
-                  href={WHATSAPP_URL}
+                  href={CALENDLY_URL}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noreferrer"
                   className="btn-primary w-full py-4 text-xs sm:text-sm font-black flex items-center justify-center gap-2 shadow-2xl shadow-[#1258FA]/30 cursor-pointer hover:scale-[1.02] active:scale-95 transition-all"
                 >
-                  <MessageCircle size={17} className="text-white" />
-                  <span>Ya realicé mi registro</span>
+                  <span>Escala aquí tu negocio</span>
                   <ArrowRight size={16} />
                 </a>
 

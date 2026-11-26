@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
-import { Volume2, Play, Sparkles, MessageCircle, ArrowRight } from 'lucide-react';
+import { Volume2, Play, Sparkles, Calendar, ArrowRight } from 'lucide-react';
 
-const WHATSAPP_URL = 'https://wa.me/13463249088?text=Hola%2C%20ya%20realic%C3%A9%20mi%20registro';
+const CALENDLY_URL = 'https://calendly.com/vitalshieldinsurance';
 
 export const Hero: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -74,16 +74,16 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Video CTA button - Ya realicé mi registro */}
+          {/* Video CTA button - Agendar Demo */}
           <div className="w-full max-w-xl mt-6 text-center">
             <a
-              href={WHATSAPP_URL}
+              href={CALENDLY_URL}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noreferrer"
               className="w-full group inline-flex items-center justify-center gap-2.5 px-8 py-4 sm:py-4.5 rounded-2xl bg-gradient-to-r from-[#1258FA] via-[#16D1F5] to-[#1258FA] text-white font-black text-base sm:text-lg shadow-xl shadow-[#1258FA]/30 hover:shadow-[#1258FA]/50 hover:scale-[1.02] active:scale-95 transition-all cursor-pointer"
             >
-              <MessageCircle size={22} className="text-white group-hover:scale-110 transition-transform" />
-              <span className="tracking-wide">Ya realicé mi registro</span>
+              <Calendar size={20} className="text-white group-hover:scale-110 transition-transform" />
+              <span className="tracking-wide">Agendar Demo</span>
               <ArrowRight size={20} className="text-white group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

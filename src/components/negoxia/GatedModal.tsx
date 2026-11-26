@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, ShieldCheck, Mail, Phone, User } from 'lucide-react';
+import { Lock, ArrowRight, ShieldCheck, Mail, Phone, User, Play } from 'lucide-react';
 import { supabase } from '../../supabase';
 
 interface GatedModalProps {
@@ -70,34 +70,31 @@ export const GatedModal: React.FC<GatedModalProps> = ({ onUnlock }) => {
     <div className="fixed inset-0 z-[10000] flex items-center justify-center px-4 py-6 overflow-y-auto bg-[#060E32]/90 backdrop-blur-xl">
       <div className="relative w-full max-w-md fade-in my-auto">
         <div className="bg-[#FFF9F2] rounded-3xl p-7 sm:p-9 shadow-2xl border border-[#EDE3D5] relative overflow-hidden">
+          {/* Header Badge */}
+          <div className="flex items-center justify-center mb-5">
+            <div className="h-px w-10 bg-[#1258FA]/30" />
+            <span className="px-3 text-xs tracking-[0.25em] uppercase font-black text-[#1258FA] flex items-center gap-1.5">
+              <Lock size={13} />
+              <span>Acceso Privado</span>
+            </span>
+            <div className="h-px w-10 bg-[#1258FA]/30" />
+          </div>
+
           {/* Logo */}
           <div className="flex justify-center mb-4">
             <img
-              src="./brand/negoxia-logo.png"
+              src="./brand/negoxia-logo.jpg"
               alt="Negoxia"
-              className="h-9 sm:h-10 w-auto object-contain"
+              className="h-10 sm:h-11 w-auto object-contain rounded mix-blend-multiply"
             />
           </div>
 
-          {/* Badge o etiqueta superior (Cyan de alta jerarquía visual) */}
-          <div className="flex justify-center mb-3.5">
-            <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-[#060E32] border border-[#16D1F5]/80 text-[#16D1F5] text-[10px] sm:text-xs font-black tracking-wide text-center shadow-[0_0_16px_rgba(22,209,245,0.3)]">
-              <span className="relative flex h-2 w-2 shrink-0">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-              </span>
-              <span>WEBINAR EN VIVO • MIÉRCOLES 25 | 6:00 PM (HORA CENTRAL)</span>
-            </div>
-          </div>
-
-          {/* TÍTULO PRINCIPAL REQUERIDO */}
+          {/* TÍTULO DESTACADO EXACTO REQUERIDO */}
           <h2 className="text-2xl sm:text-3xl font-black text-[#060E32] text-center tracking-tight leading-snug">
-            Completa tu inscripción al <span className="text-gradient-blue">Webinar</span>
+            Hay un video <span className="text-gradient-blue">especial</span> para ti
           </h2>
-
-          {/* SUBTÍTULO / INSTRUCCIÓN DIRECTA */}
-          <p className="text-center text-xs sm:text-sm text-[#4B5578] mt-2 max-w-sm mx-auto leading-relaxed">
-            Deja tus datos para completar tu inscripción al webinar de este miércoles 25 a las 6:00 PM (Hora Central).
+          <p className="text-center text-xs sm:text-sm text-[#4B5578] mt-2 max-w-xs mx-auto leading-relaxed">
+            Completa tus datos para desbloquear el acceso inmediato a la presentación y la plataforma.
           </p>
 
           {/* Formulario Obligatorio (Content Gate) */}
@@ -171,13 +168,14 @@ export const GatedModal: React.FC<GatedModalProps> = ({ onUnlock }) => {
             <button
               type="submit"
               disabled={loading}
-              className="btn-primary w-full py-4 text-base font-black flex items-center justify-center gap-2 shadow-xl shadow-[#1258FA]/25 hover:shadow-[#1258FA]/45 hover:scale-[1.01] active:scale-95 transition-all mt-4 cursor-pointer disabled:opacity-60"
+              className="btn-primary w-full py-4 text-base font-extrabold flex items-center justify-center gap-2 shadow-xl mt-3 cursor-pointer disabled:opacity-60"
             >
               {loading ? (
-                <span>Completando inscripción...</span>
+                <span>Desbloqueando acceso...</span>
               ) : (
                 <>
-                  <span>Completar mi inscripción</span>
+                  <Play size={18} className="fill-white" />
+                  <span>Ver el Video</span>
                   <ArrowRight size={18} />
                 </>
               )}
